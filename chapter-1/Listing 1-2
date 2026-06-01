@@ -1,0 +1,8 @@
+# Listing 1-2. SQL table generated for the Book model
+
+CREATE TABLE myapp_book (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    published_date DATE NOT NULL
+);
