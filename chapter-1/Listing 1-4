@@ -1,0 +1,4 @@
+# Listing 1-4. SQL generated for inserting a record
+
+INSERT INTO myapp_book (title, author, published_date)
+VALUES ('Harry Potter', 'J.K. Rowling', '1997-06-26');

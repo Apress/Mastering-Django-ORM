@@ -1,0 +1,4 @@
+# Listing 1-6. SQL generated for retrieving all books
+
+SELECT "myapp_book"."id", "myapp_book"."title", "myapp_book"."author", "myapp_book"."published_date" 
+FROM "myapp_book";

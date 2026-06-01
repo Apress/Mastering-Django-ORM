@@ -1,0 +1,6 @@
+# Listing 1-14 N+1 Query
+
+books = Book.objects.all()
+
+for book in books:
+    print(book.author.name)

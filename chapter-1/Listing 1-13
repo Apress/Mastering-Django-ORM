@@ -1,0 +1,4 @@
+# Listing 1-13 OOP concept
+
+book = Book.objects.get(id=1)
+print(book.title)

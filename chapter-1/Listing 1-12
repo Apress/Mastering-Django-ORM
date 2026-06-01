@@ -1,0 +1,4 @@
+# Listing 1-12 Portability Example
+
+# Same query works across PostgreSQL, MySQL, SQLite
+books = Book.objects.filter(author="James Clear")

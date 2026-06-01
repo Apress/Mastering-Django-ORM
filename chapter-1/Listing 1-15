@@ -1,0 +1,6 @@
+# Listing 1-15 N+1 Query Fix
+
+books = Book.objects.select_related('author')
+
+for book in books:
+    print(book.publisher.name)

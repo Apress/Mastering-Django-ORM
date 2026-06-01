@@ -1,0 +1,12 @@
+# Listing 1-8. Example PostgreSQL settings in Django
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydatabase',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
