@@ -1,0 +1,12 @@
+# Listing 3-31 isnull example
+
+qs = Book.objects.filter(published_date__isnull=True)
+print(list(qs))
+
+# Output
+
+[<Book: Untitled Manuscript>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE published_date IS NULL;

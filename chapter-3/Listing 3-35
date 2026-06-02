@@ -1,0 +1,12 @@
+# Listing 3-35 lt example
+
+qs = Book.objects.filter(price__lt=100)
+print(list(qs))
+
+# Output
+
+[<Book: Pocket Classics: Fairy Tales>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE price < 100;

@@ -1,0 +1,12 @@
+# Listing 3-33 gte example
+
+qs = Book.objects.filter(number_of_pages__gte=1000)
+print(list(qs))
+
+# Output
+
+[]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE number_of_pages >= 1000;

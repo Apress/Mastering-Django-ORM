@@ -1,0 +1,12 @@
+# Listing 3-40 range example
+
+qs = Book.objects.filter(number_of_pages__range=(100, 500))
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>, <Book: The Lion, the Witch and the Wardrobe>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE number_of_pages BETWEEN 100 AND 500;

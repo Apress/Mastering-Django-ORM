@@ -1,0 +1,17 @@
+# Listing 3-30 in example
+
+qs = Book.objects.filter(
+    author__name__in=["J.R.R. Tolkien", "C.S. Lewis"]
+)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>, <Book: The Lion, the Witch and the Wardrobe>]
+
+# Equivalent SQL
+
+SELECT * FROM book
+INNER JOIN author
+    ON book.author_id = author.id
+WHERE author.name IN ('J.R.R. Tolkien', 'C.S. Lewis');

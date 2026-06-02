@@ -1,0 +1,13 @@
+# Listing 3-44 startswith example
+
+qs = Book.objects.filter(title__startswith="Harry")
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE title LIKE 'Harry%';

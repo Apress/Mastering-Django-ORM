@@ -1,0 +1,12 @@
+# Listing 3-29 iexact example
+
+qs = Book.objects.filter(title__iexact="the hobbit")
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE UPPER(title) = UPPER('the hobbit');

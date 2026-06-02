@@ -1,0 +1,12 @@
+# Listing 3-26 endswith example
+
+qs = Book.objects.filter(title__endswith="Azkaban")
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Prisoner of Azkaban>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE title LIKE '%Azkaban';

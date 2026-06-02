@@ -1,0 +1,12 @@
+# Listing 3-39 quarter example
+
+qs = Book.objects.filter(created_at__quarter=2)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivelent SQL
+
+SELECT * FROM book WHERE EXTRACT(QUARTER FROM created_at) = 2;

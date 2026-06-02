@@ -1,0 +1,12 @@
+# Listing 3-32 gt example
+
+qs = Book.objects.filter(number_of_pages__gt=500)
+print(list(qs))
+
+# Output
+
+[<Book: The Order of the Phoenix>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE number_of_pages > 500;

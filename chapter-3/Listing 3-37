@@ -1,0 +1,12 @@
+# Listing 3-37 minute example
+
+qs = Book.objects.filter(created_at__minute=30)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE EXTRACT(MINUTE FROM created_at) = 30;

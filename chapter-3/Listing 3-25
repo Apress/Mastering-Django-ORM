@@ -1,0 +1,12 @@
+# Listing 3-25 day example
+
+qs = Book.objects.filter(published_date__day=19)
+print(list(qs))
+
+# Output
+
+[<Book: The Lion, the Witch and the Wardrobe>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE EXTRACT(DAY FROM published_date) = 19;

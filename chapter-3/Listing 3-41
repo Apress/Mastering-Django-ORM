@@ -1,0 +1,16 @@
+# Listing 3-41 regex example
+
+qs = Book.objects.filter(title__regex=r'^The')
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>, <Book: The Lion, the Witch and the Wardrobe>]
+
+# PostgreSQL
+
+SELECT * FROM book WHERE title ~ '^The';
+
+# MySQL/MariaDB 
+
+SELECT * FROM book WHERE title REGEXP '^The';

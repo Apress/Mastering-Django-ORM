@@ -1,0 +1,16 @@
+# Listing 3-42 iregex example
+
+qs = Book.objects.filter(title__iregex=r'^the')
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>, <Book: The Lion, the Witch and the Wardrobe>]
+
+# PostgreSQL
+
+SELECT * FROM book WHERE title ~* '^the';
+
+# MySQL/MariaDB 
+
+SELECT * FROM book WHERE title REGEXP '^(?i)the';

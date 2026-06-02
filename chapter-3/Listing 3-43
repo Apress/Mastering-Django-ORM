@@ -1,0 +1,12 @@
+# Listing 3-43 second example
+
+qs = Book.objects.filter(created_at__second=0)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE EXTRACT(SECOND FROM created_at) = 0;

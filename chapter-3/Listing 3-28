@@ -1,0 +1,15 @@
+# Listing 3-28 exact example
+
+qs = Book.objects.filter(title__exact="The Hobbit")
+print(qs)
+
+qs2 = Book.objects.filter(title="The Hobbit")
+print(qs2)
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE title = 'The Hobbit';
