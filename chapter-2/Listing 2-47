@@ -1,0 +1,5 @@
+# Listing 2-47 SQL equivalent of AutoField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY
+);

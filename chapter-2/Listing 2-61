@@ -1,0 +1,6 @@
+# Listing 2-61 SQL equivalent of SlugField
+
+CREATE TABLE example (  
+    id BIGSERIAL PRIMARY KEY,
+    slug VARCHAR(50) NOT NULL  
+); 

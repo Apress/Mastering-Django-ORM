@@ -1,0 +1,6 @@
+# Listing 2-43 SQL equivalent of FloatField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    temperature REAL NOT NULL
+);

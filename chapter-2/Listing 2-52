@@ -1,0 +1,6 @@
+# Listing 2-52 Example model with FilePathField
+
+class Example(models.Model):
+    path = models.FilePathField(
+        path='/var/www/media', 
+        match=".*\.txt$", recursive=True)

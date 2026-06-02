@@ -1,0 +1,4 @@
+# Listing 2-58 Example model with JSONField
+
+class Example(models.Model):
+    metadata = models.JSONField()

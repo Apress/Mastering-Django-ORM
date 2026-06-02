@@ -1,0 +1,4 @@
+# Listing 2-54 Example model with GenericIPAddressField
+
+class Example(models.Model):
+    ip_address = models.GenericIPAddressField(protocol='both')

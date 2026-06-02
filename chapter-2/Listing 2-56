@@ -1,0 +1,4 @@
+# Listing 2-56 Example model with ImageField
+
+class Example(models.Model):
+    image = models.ImageField(upload_to='images/')

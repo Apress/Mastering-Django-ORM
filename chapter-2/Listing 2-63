@@ -1,0 +1,6 @@
+# Listing 2-63 SQL equivalent of TimeField
+
+CREATE TABLE example (  
+    id BIGSERIAL PRIMARY KEY,
+    appointment_time TIME NOT NULL  
+); 

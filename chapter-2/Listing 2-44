@@ -1,0 +1,4 @@
+# Listing 2-44 Example model with DecimalField
+
+class Example(models.Model):
+    amount = models.DecimalField(max_digits=10, decimal_places=2)

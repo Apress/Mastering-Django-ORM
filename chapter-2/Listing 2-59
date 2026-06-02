@@ -1,0 +1,6 @@
+# Listing 2-59 SQL equivalent of JSONField
+
+CREATE TABLE example (  
+    id BIGSERIAL PRIMARY KEY,
+    metadata JSONB NOT NULL  
+);

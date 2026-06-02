@@ -1,0 +1,6 @@
+# Listing 2-49 SQL equivalent of DurationField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    duration INTERVAL NOT NULL  
+);

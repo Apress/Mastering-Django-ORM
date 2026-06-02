@@ -1,0 +1,4 @@
+# Listing 2-42 Example model with FloatField
+
+class Example(models.Model):
+    temperature = models.FloatField()

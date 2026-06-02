@@ -1,0 +1,6 @@
+# Listing 2-41 SQL equivalent of EmailField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    email VARCHAR(254) NOT NULL UNIQUE
+);

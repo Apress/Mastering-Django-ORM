@@ -1,0 +1,4 @@
+# Listing 2-46 Example model with AutoField
+
+class Example(models.Model):
+    pass

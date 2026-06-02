@@ -1,0 +1,6 @@
+# Listing 2-55 SQL equivalent of GenericIPAddressField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    ip_address VARCHAR(39) NOT NULL  
+);  

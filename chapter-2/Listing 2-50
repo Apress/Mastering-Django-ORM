@@ -1,0 +1,4 @@
+# Listing 2-50 Example model with FileField
+
+class Example(models.Model):
+    document = models.FileField(upload_to='uploads/')

@@ -1,0 +1,6 @@
+# Listing 2-45 SQL equivalent of DecimalField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    amount NUMERIC(10, 2) NOT NULL
+);

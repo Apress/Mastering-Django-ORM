@@ -1,0 +1,4 @@
+# Listing 2-48 Example model with DurationField
+
+class Example(models.Model):
+    duration = models.DurationField()
