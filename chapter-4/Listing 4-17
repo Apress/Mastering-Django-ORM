@@ -1,0 +1,24 @@
+# Listing 4-17 Using prefetch_related
+ 
+books = Book.objects.prefetch_related("genres")
+ 
+for book in books:
+    for genre in book.genres.all():
+        print(book.title, genre.name)
+ 
+# Equivalent SQL
+ 
+# First Query
+ 
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;
+ 
+# Second Query
+ 
+SELECT genre.id, genre.name, book_genres.book_id
+FROM genre
+INNER JOIN book_genres
+ON genre.id = book_genres.genre_id
+WHERE book_genres.book_id IN (1, 2, 3, ...);

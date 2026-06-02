@@ -1,0 +1,13 @@
+# Listing 4-35 Using earliest method
+
+earliest_book = Book.objects.earliest("published_date")
+print(earliest_book.title, earliest_book.published_date)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+ORDER BY book.published_date ASC
+LIMIT 1;

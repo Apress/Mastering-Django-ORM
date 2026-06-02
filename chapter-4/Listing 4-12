@@ -1,0 +1,9 @@
+# Listing 4-12 Using datetimes method
+ 
+datetimes = Book.objects.datetimes("created_at", "month")
+ 
+# Equivalent SQL
+ 
+SELECT DISTINCT DATE_TRUNC('month', book.created_at) AS datetime
+FROM book
+ORDER BY datetime ASC;

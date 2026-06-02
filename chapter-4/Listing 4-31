@@ -1,0 +1,12 @@
+# Listing 4-31 Using iterator method
+
+books = Book.objects.all().iterator()
+for book in books:
+    print(book.title)
+
+#Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;

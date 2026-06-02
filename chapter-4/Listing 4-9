@@ -1,0 +1,14 @@
+# Listing 4-9 Using values_list method
+ 
+books = Book.objects.values_list("title", "price")
+ 
+# Output
+ 
+[
+    ('Harry Potter', 500.00)
+    ('The Hobbit', 450.00)
+]
+ 
+# Equivalent SQL
+ 
+SELECT book.title, book.price FROM book;

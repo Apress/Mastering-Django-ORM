@@ -1,0 +1,14 @@
+# Listing 4-37 Using contains method
+
+book = Book.objects.get(id=10)
+recent_books = Book.objects.filter(published_date__year=2026)
+is_present = recent_books.contains(book)
+print(is_present)
+
+# Equivalent SQL 
+
+SELECT 1
+FROM book
+WHERE published_date BETWEEN '2026-01-01' AND '2026-12-31'
+AND id = 10
+LIMIT 1;

@@ -1,0 +1,10 @@
+# Listing 4-24 Using raw method
+
+query = "SELECT * FROM book WHERE price > %s"
+books = Book.objects.raw(query, [500])
+for book in books:
+    print(book.title, book.price)
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE price > 500;

@@ -1,0 +1,12 @@
+# Listing 4-32 Using iterator with chunk_size
+
+books = Book.objects.all().iterator(chunk_size=100)
+for book in books:
+    print(book.title)
+
+#Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;

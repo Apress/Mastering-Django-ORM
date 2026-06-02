@@ -1,0 +1,22 @@
+# Listing 4-27 Using update_or_create method
+
+author, created = Author.objects.update_or_create(
+    name="J.K. Rowling",
+    defaults={}
+)
+ 
+print(author)
+print(created)
+
+# Equivalent SQL (when record does not exist)
+
+# First Query
+
+SELECT author.id, author.name
+FROM author
+WHERE author.name = 'J.K. Rowling'
+LIMIT 1;
+
+# Second Query
+
+INSERT INTO author (name) VALUES ('J.K. Rowling');

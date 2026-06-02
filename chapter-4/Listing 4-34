@@ -1,0 +1,13 @@
+# Listing 4-34 Using last method
+
+last_book = Book.objects.order_by("published_date").last()
+print(last_book.title, last_book.published_date)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+ORDER BY book.published_date DESC
+LIMIT 1;

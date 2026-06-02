@@ -1,0 +1,18 @@
+# Listing 4-29 Using in_bulk method
+
+authors = Author.objects.in_bulk([1, 2, 3])
+print(authors)
+
+# Output
+
+{
+    1: <Author: J.K. Rowling>,
+    2: <Author: Tolkien>,
+    3: <Author: George R.R. Martin>
+}
+
+#Equivalent SQL
+
+SELECT author.id, author.name
+FROM author
+WHERE author.id IN (1, 2, 3);

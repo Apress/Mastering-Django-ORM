@@ -1,0 +1,7 @@
+# Listing 4-13 Using none method
+ 
+books = Book.objects.none()
+ 
+# Output
+ 
+<QuerySet []>

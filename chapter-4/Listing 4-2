@@ -1,0 +1,18 @@
+Listing 4-2 Using alias with Count function
+
+from django.db.models import Count
+ 
+books = Book.objects.alias(
+    total_genres=Count("genres")
+).filter(total_genres__gt=1)
+ 
+Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+LEFT OUTER JOIN book_genres
+ON book.id = book_genres.book_id
+GROUP BY book.id
+HAVING COUNT(book_genres.genre_id) > 1;

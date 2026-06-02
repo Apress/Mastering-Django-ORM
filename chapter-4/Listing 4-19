@@ -1,0 +1,15 @@
+# Listing 4-19 Prefetch with with to_attr example
+ 
+from django.db.models import Prefetch
+ 
+prefetch_genres = Prefetch(
+    "genres",
+    queryset=Genre.objects.filter(name__icontains="F"),
+    to_attr="genre_starting_with_f"
+)
+ 
+books = Book.objects.prefetch_related(prefetch_genres)
+ 
+for book in books:
+    for genre in book.genre_starting_with_f:
+        print(book.title, genre.name)

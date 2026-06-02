@@ -1,0 +1,15 @@
+# Listing 4-6 Using distinct to remove duplicates
+
+books = Book.objects.filter( genres__name__in=["Fantasy", "Drama"] ).distinct()
+
+# Equivalent SQL
+
+SELECT DISTINCT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+INNER JOIN book_genres
+ON book.id = book_genres.book_id
+INNER JOIN genre
+ON book_genres.genre_id = genre.id
+WHERE genre.name IN ('Fantasy', 'Drama');

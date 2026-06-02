@@ -1,0 +1,9 @@
+# Listing 4-22 Using only method
+
+books = Book.objects.only("title", "price")
+for book in books:
+    print(book.title, book.price)
+ 
+# Equivalent SQL
+
+SELECT book.id, book.title, book.price FROM book;

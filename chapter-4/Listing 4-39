@@ -1,0 +1,11 @@
+# Listing 4-39 Basic slicing
+
+books = Book.objects.all()[0:5]
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+LIMIT 5;

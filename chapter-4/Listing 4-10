@@ -1,0 +1,11 @@
+# Listing 4-10 Using values_list with flat=True
+ 
+titles = Book.objects.values_list("title", flat=True)
+ 
+# Output
+ 
+[ 'Harry Potter', 'The Hobbit']
+ 
+# Equivalent SQL
+ 
+SELECT book.title FROM book;

@@ -1,0 +1,13 @@
+# Listing 4-30 Using in_bulk with field_name
+
+authors = Author.objects.in_bulk(
+    ["J.K. Rowling", "Tolkien"],
+    field_name="name"
+)
+print(authors)
+
+# Equivalent SQL
+
+SELECT author.id, author.name
+FROM author
+WHERE author.name IN ('J.K. Rowling', 'Tolkien');

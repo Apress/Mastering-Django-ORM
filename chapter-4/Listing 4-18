@@ -1,0 +1,32 @@
+# Listing 4-18 Using Prefetch object
+ 
+from django.db.models import Prefetch
+ 
+prefetch_genres = Prefetch(
+    "genres",
+    queryset=Genre.objects.filter(name__icontains="F"),
+)
+ 
+books = Book.objects.prefetch_related(prefetch_genres)
+
+for book in books:
+    for genre in book.genres.all():
+        print(book.title, genre.name)
+ 
+# Equivalent SQL
+ 
+# First Query
+ 
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;
+ 
+# Second Query
+ 
+SELECT genre.id, genre.name, book_genres.book_id
+FROM genre
+INNER JOIN book_genres
+ON genre.id = book_genres.genre_id
+WHERE genre.name ILIKE '%F%'
+AND book_genres.book_id IN (1, 2, 3, ...);

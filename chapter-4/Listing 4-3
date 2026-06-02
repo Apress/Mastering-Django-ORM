@@ -1,0 +1,23 @@
+# Listing 4-3 Using reverse method on QuerySet
+
+books = Book.objects.all().order_by("published_date")
+ 
+reversed_books = books.reverse()
+
+# Equivalent SQL
+
+# first QuerySet
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+ORDER BY book.published_date ASC;
+
+# reversed QuerySet
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+ORDER BY book.published_date DESC;

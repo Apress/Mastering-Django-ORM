@@ -1,0 +1,16 @@
+# Listing 4-15 Using select_related
+ 
+books = Book.objects.select_related("author")
+ 
+for book in books:
+    print(book.title, book.author.name)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at,
+author.id, author.name
+FROM book
+INNER JOIN author
+ON book.author_id = author.id;

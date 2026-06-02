@@ -1,0 +1,11 @@
+# Listing 4-40 Slicing with offset
+
+books = Book.objects.all()[5:10]
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+LIMIT 5 OFFSET 5;

@@ -1,0 +1,21 @@
+# Listing 4-4 reverse without specifying order by
+
+books = Book.objects.all()
+
+reversed_books = books.reverse()
+
+# Equivalent SQL
+
+# first QuerySet
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+
+# reversed QuerySet
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book

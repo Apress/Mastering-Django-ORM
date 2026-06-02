@@ -1,0 +1,11 @@
+# Listing 4-23 Using defer method
+
+books = Book.objects.defer("price", "number_of_pages")
+for book in books:
+    print(book.title)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id,
+book.published_date, book.created_at
+FROM book;

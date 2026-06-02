@@ -1,0 +1,17 @@
+# Listing 4-21 Using extra with where clause
+
+books = Book.objects.extra(
+    where=["price > %s"],
+    params=[500]
+)
+ 
+for book in books:
+    print(book.title, book.price)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+WHERE price > 500;

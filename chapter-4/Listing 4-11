@@ -1,0 +1,10 @@
+# Listing 4-11 Using dates method
+ 
+dates = Book.objects.dates("published_date", "year")
+ 
+# Equivalent SQL
+ 
+SELECT DISTINCT DATE_TRUNC('year', book.published_date) AS date
+FROM book
+WHERE book.published_date IS NOT NULL
+ORDER BY date ASC;

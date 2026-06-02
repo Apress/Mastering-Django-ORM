@@ -1,0 +1,24 @@
+# Listing 4-16 Accessing ManyToMany without prefetch_related
+ 
+books = Book.objects.all()
+ 
+for book in books:
+    for genre in book.genres.all():
+        print(book.title, genre.name)
+ 
+# Equivalent SQL
+ 
+# First Query
+ 
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;
+ 
+# Second Query (executed for each book)
+ 
+SELECT genre.id, genre.name
+FROM genre
+INNER JOIN book_genres
+ON genre.id = book_genres.genre_id
+WHERE book_genres.book_id = <book_id>;

@@ -1,0 +1,14 @@
+# Listing 4-8 Using values method
+ 
+books = Book.objects.values("title", "price")
+
+# Output
+ 
+[
+    {'title': 'Harry Potter', 'price': 500.00}
+    {'title': 'The Hobbit', 'price': 450.00}
+]
+ 
+# Equivalent SQL
+ 
+SELECT book.title, book.price FROM book

@@ -1,0 +1,21 @@
+# Listing 4-14 Accessing related object without select_related
+ 
+books = Book.objects.all()
+ 
+for book in books:
+    print(book.title, book.author.name)
+ 
+# Equivalent SQL
+ 
+# First Query for fetch the book
+ 
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book;
+ 
+# Second Query (executed for each book)
+ 
+SELECT author.id, author.name
+FROM author
+WHERE author.id = <author_id>;

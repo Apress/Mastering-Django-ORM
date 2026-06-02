@@ -1,0 +1,32 @@
+# Listing 4-28 Using update_or_create with defaults
+
+author = Author.objects.get(name="J.K. Rowling")
+book, created = Book.objects.update_or_create(
+    title="Harry Potter",
+    defaults={
+        "author": author,
+        "price": 600.00,
+        "number_of_pages": 500
+    }
+)
+print(book)
+print(created)
+
+# Equivalent SQL (when record exists)
+
+# First Query
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+WHERE book.title = 'Harry Potter'
+LIMIT 1;
+
+# Second Query
+
+UPDATE book
+SET author_id = 1,
+price = 600.00,
+number_of_pages = 500
+WHERE id = 1;
