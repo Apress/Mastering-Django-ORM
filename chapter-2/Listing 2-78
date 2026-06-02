@@ -1,0 +1,3 @@
+# Listing 2-78 models. DO_NOTHING example
+
+author = models.ForeignKey(Author, on_delete=models.DO_NOTHING)

@@ -1,0 +1,5 @@
+# Listing 3-3 QuerySet can be chained example
+
+books = Book.objects.filter(
+    author__name="J.K. Rowling").filter(price__gte=300)
+print(books)

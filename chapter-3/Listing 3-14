@@ -1,0 +1,11 @@
+# Listing 3-14 update using save method
+
+book = Book.objects.get(
+    title="Harry Potter and the Chamber of Secrets"
+)
+book.price = 400
+book.save()
+
+# Equivalent SQL
+
+UPDATE book set price=400 where id=1;

@@ -1,0 +1,28 @@
+# Listing 3-9 create using bulk_create
+
+author = Author.objects.get(name="J.K. Rowling")
+
+Book.objects.bulk_create([
+    Book(
+        title="Harry Potter and the Philosopher's Stone", 
+        author=author
+    ),
+    Book(
+        title="Harry Potter and the Chamber of Secrets", 
+        author=author
+    ),
+])
+
+print(list(Book.objects.filter(author=author)))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+INSERT INTO book (title, author_id) 
+VALUES 
+    (' Harry Potter and the Philosopher's Stone ', 1),
+    (' Harry Potter and the Chamber of Secrets ', 1);

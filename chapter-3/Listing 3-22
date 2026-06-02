@@ -1,0 +1,12 @@
+# Listing 3-22 contains example
+
+qs = Book.objects.filter(title__contains="Magic")
+print(list(qs))
+
+# Output
+
+[<Book: The Magic Treehouse>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE title LIKE '%Magic%';

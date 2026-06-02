@@ -1,0 +1,12 @@
+# Listing 3-23 icontains example
+
+qs = Book.objects.filter(title__icontains="magic")
+print(list(qs))
+
+# Output
+
+[<Book: The Magic Treehouse>, <Book: MAGIC Spells>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE UPPER(title) LIKE UPPER('%magic%');

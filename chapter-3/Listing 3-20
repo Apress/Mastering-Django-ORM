@@ -1,0 +1,20 @@
+# Listing 3-20 QuerySet intersection
+
+qs1 = Book.objects.filter(price=300)
+qs2 = Book.objects.filter(author__name="J.K. Rowling")
+qs = qs1.intersection(qs2)
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+SELECT * FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE b.price = 300
+INTERSECT
+SELECT * FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE a.name = 'J.K. Rowling';

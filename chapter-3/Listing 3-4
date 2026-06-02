@@ -1,0 +1,6 @@
+# Listing 3-4 QuerySet can be chained equivalent SQL
+
+SELECT b.*
+FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE a.name = 'J.K. Rowling' AND b.price >= 300;

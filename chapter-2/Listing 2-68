@@ -1,0 +1,4 @@
+# Listing 2-68 Example model with BinaryField
+
+class Example(models.Model):
+    binary_data = models.BinaryField()

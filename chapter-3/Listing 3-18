@@ -1,0 +1,7 @@
+# Listing 3-18 delete a QuerySet
+
+Book.objects.filter(price=100).delete()
+
+# Equivalent SQL
+
+DELETE FROM book WHERE id IN (41, 42);

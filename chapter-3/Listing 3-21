@@ -1,0 +1,25 @@
+# Listing 3-21 QuerySet difference
+
+qs1 = Book.objects.filter(author__name="J.K. Rowling")
+qs2 = Book.objects.filter(price=300)
+qs = qs1.difference (qs2)
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Pocket Classics: Fairy Tales>]
+
+# Equivalent SQL
+
+(
+  SELECT * FROM book AS b
+  JOIN author AS a ON b.author_id = a.id
+  WHERE a.name = 'J.K. Rowling'
+)
+EXCEPT
+(
+  SELECT * FROM book AS b
+  JOIN author AS a ON b.author_id = a.id
+  WHERE b.price = 300
+);

@@ -1,0 +1,4 @@
+# Listing 2-72 to parameter example
+
+author = models.ForeignKey(
+    Author, on_delete=models.CASCADE,related_name='books')

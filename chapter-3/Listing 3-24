@@ -1,0 +1,13 @@
+# Listing 3-24 date example
+
+from datetime import date
+qs = Book.objects.filter(created_at__date=date(2025, 6, 19))
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE DATE(created_at) = '2025-06-19';

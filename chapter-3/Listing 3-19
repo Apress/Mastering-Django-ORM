@@ -1,0 +1,22 @@
+# Listing 3-19 QuerySet union
+
+qs1 = Book.objects.filter(author__name="J.K. Rowling")
+qs2 = Book.objects.filter(author__name="J.R.R. Tolkien")
+qs = qs1.union(qs2)
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>,
+ <Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE a.name = 'J.K. Rowling'
+UNION
+SELECT * FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE a.name = 'J.R.R. Tolkien';

@@ -1,0 +1,14 @@
+# Listing 3-8 create using save method
+
+author = Author.objects.get(name="J.R.R. Tolkien")
+book = Book(title="The Hobbit", author=author)
+book.save()
+print(book)
+
+# Output
+
+<Book: The Hobbit>
+
+# Equivalent SQL
+
+INSERT INTO book (title, author_id) VALUES ('The Hobbit', 2);

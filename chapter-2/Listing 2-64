@@ -1,0 +1,4 @@
+# Listing 2-64 Example model with URLField
+
+class Example(models.Model):
+    website = models.URLField(max_length=200)

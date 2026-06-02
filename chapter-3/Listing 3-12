@@ -1,0 +1,15 @@
+# Listing 3-12 fetch using exclude
+
+books = Book.objects.exclude(author__name="J.K. Rowling")
+print(list(books))
+
+# Output
+
+[<Book: The Hobbit>, <Book: The Lion, the Witch and the Wardrobe>]
+
+# Equivalent SQL
+
+SELECT b.*
+FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE NOT (a.name = 'J.K. Rowling');

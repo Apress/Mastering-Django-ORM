@@ -1,0 +1,11 @@
+# Listing 3-5 QuerySet are iterable
+
+for b in Book.objects.all():
+    print(b.title)
+
+# Output
+
+Harry Potter and the Philosopher's Stone
+Harry Potter and the Chamber of Secrets
+The Hobbit
+The Lion, the Witch and the Wardrobe

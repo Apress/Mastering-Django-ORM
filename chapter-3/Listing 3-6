@@ -1,0 +1,5 @@
+# Listing 3-6 QuerySet cache results
+
+qs = Book.objects.all()
+print(list(qs))  # Executes SQL
+print(list(qs))  # Uses cached results (no new SQL)

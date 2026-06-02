@@ -1,0 +1,6 @@
+# Listing 2-67 SQL equivalent of UUIDField
+
+CREATE TABLE example (  
+    id BIGSERIAL PRIMARY KEY,
+    identifier UUID NOT NULL
+);

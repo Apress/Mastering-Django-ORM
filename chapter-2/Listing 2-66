@@ -1,0 +1,4 @@
+# Listing 2-66 Example model with UUIDField
+
+class Example(models.Model):
+    identifier = models.UUIDField(default=uuid.uuid4)

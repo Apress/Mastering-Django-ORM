@@ -1,0 +1,3 @@
+# Listing 2-79 to_field example
+
+author = models.ForeignKey(Author, on_delete=models.DO_NOTHING, to_field='name')

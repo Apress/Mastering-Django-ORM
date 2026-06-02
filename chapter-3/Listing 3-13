@@ -1,0 +1,26 @@
+# Listing 3-13 order_by examples
+
+books = Book.objects.order_by("title")
+print(list(books))
+
+# Order by price (descending)
+books = Book.objects.order_by("-price")
+print(list(books))
+
+# Output
+
+[<Book: Harry Potter and the Chamber of Secrets>,
+ <Book: Harry Potter and the Philosopher's Stone>,
+ <Book: The Hobbit>,
+ <Book: The Lion, the Witch and the Wardrobe>]
+
+[<Book: The Order of the Phoenix>,
+ <Book: The Hobbit>,
+ <Book: Harry Potter and the Chamber of Secrets>,
+ <Book: Pocket Classics: Fairy Tales>]
+
+# Equivalent SQL
+
+SELECT * FROM book ORDER BY title ASC;
+
+SELECT * FROM book ORDER BY price DESC;

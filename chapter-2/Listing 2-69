@@ -1,0 +1,6 @@
+# Listing 2-69 SQL equivalent of BinaryField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    binary_data BYTEA  NOT NULL
+);

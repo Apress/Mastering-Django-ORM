@@ -1,0 +1,4 @@
+# Listing 3.2 QuerySet are lazy
+
+books = Book.objects.all() #No Query executed here
+print(list(books))

@@ -1,0 +1,8 @@
+# Listing 3-17 delete an instance
+
+book = Book.objects.get(title="The Hobbit")
+book.delete()
+
+# Equivalent SQL
+
+DELETE FROM book WHERE id IN (40);

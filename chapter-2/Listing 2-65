@@ -1,0 +1,6 @@
+# Listing 2-65 SQL equivalent of URLField
+
+CREATE TABLE example ( 
+    id BIGSERIAL PRIMARY KEY, 
+    website VARCHAR(200) NOT NULL  
+);

@@ -1,0 +1,13 @@
+# Listing 3-7 create using create method
+
+author = Author.objects.get(name="J.K. Rowling")
+book = Book.objects.create(title="Harry Potter", author=author)
+print(book)
+
+# Output
+
+<Book: Harry Potter>
+
+# Equivalent SQL
+
+INSERT INTO book (title, author_id) VALUES ('Harry Potter', 1);

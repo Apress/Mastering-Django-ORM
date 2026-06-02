@@ -1,0 +1,16 @@
+# Listing 3-11 fetch using filter
+
+books = Book.objects.filter(author__name="J.K. Rowling", price=300)
+print(list(books))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+SELECT b.*
+FROM book AS b
+JOIN author AS a ON b.author_id = a.id
+WHERE a.name = 'J.K. Rowling' AND b.price = 300;

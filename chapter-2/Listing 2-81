@@ -1,0 +1,10 @@
+# Listing 2-81 SQL equivalent for OneToOneField
+
+CREATE TABLE profile (
+    id BIGSERIAL PRIMARY KEY,
+    user_id INTEGER UNIQUE NOT NULL,
+    bio TEXT NOT NULL,
+    phone_number TEXT NOT NULL,
+    address TEXT NULL,
+    FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE
+);

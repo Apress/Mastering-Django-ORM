@@ -1,0 +1,12 @@
+# Listing 2-71 SQL equivalent of ForeignKey
+
+CREATE TABLE author (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+CREATE TABLE book (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    author_id INTEGER NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES author (id) ON DELETE CASCADE
+);
