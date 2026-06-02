@@ -1,0 +1,16 @@
+# Listing 4-60 Using Value with annotate
+ 
+from django.db.models import Value, CharField
+ 
+books = Book.objects.annotate(
+    category=Value("General", output_field=CharField())
+)
+ 
+for book in books:
+    print(book.title, book.category)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+'General' AS category
+FROM book;

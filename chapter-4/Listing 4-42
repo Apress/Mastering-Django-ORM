@@ -1,0 +1,14 @@
+# Listing 4-42 Using ordering in Meta
+
+class Book(models.Model): 
+    title = models.CharField(max_length=200) 
+    published_date = models.DateField(null=True, blank=True)
+    class Meta:  
+        ordering = ["-published_date"]  
+ 
+# If we call
+books = Book.objects.all()
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.published_date FROM book ORDER BY book.published_date DESC;

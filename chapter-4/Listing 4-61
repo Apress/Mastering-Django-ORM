@@ -1,0 +1,19 @@
+# Listing 4-61 Combining Value and F
+ 
+from django.db.models import F, Value, ExpressionWrapper, DecimalField
+ 
+books = Book.objects.annotate(
+    increased_price=ExpressionWrapper(
+        F("price") + Value(50),
+        output_field=DecimalField(max_digits=6, decimal_places=2)
+    )
+)
+ 
+for book in books:
+    print(book.title, book.increased_price)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+(book.price + 50) AS increased_price
+FROM book;

@@ -1,0 +1,23 @@
+# Listing 4-68 Using Concat
+ 
+from django.db.models.functions import Concat
+from django.db.models import Value, CharField
+ 
+books = Book.objects.annotate(
+    full_title=Concat(
+        "title",
+        Value(" - "),
+        "author__name",
+        output_field=CharField()
+    )
+)
+ 
+for book in books:
+    print(book.full_title)
+ 
+# Equivalent SQL
+ 
+SELECT book.id,
+(COALESCE(book.title, ) || COALESCE((COALESCE( - , ) || COALESCE(author.name, )), )) AS full_title
+FROM book
+INNER JOIN author ON book.author_id = author.id;

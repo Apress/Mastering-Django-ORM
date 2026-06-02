@@ -1,0 +1,11 @@
+# Listing 4-53 OR condition example
+
+from django.db.models import Q
+
+books = Book.objects.filter(
+    Q(title__contains="python") | Q(title__contains="django"))
+
+# Equivalent SQL
+
+SELECT * FROM book
+WHERE title LIKE '%python%' OR title LIKE '%django%';

@@ -1,0 +1,14 @@
+# Listing 4-65 Using Least
+ 
+from django.db.models.functions import Least
+ 
+books = Book.objects.annotate(
+    min_value=Least(
+        "price", "number_of_pages", output_field=IntegerField())
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+LEAST(book.price, book.number_of_pages) AS min_value
+FROM book;

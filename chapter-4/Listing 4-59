@@ -1,0 +1,14 @@
+# Listing 4-59 Using F inside annotate
+
+from django.db.models import ExpressionWrapper, DecimalField
+books = Book.objects.annotate(
+    increased_price=F("price") + 50
+)
+for book in books:
+    print(book.title, book.increased_price)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.price,
+(book.price + 50) AS increased_price
+FROM book;

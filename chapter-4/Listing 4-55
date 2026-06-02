@@ -1,0 +1,10 @@
+# Listing 4-55 not logic using Q
+
+books = Book.objects.filter(
+    ~Q(title__contains="python")
+)
+
+# SQL Equivalent:
+
+SELECT * FROM book
+WHERE NOT (title LIKE '%python%');

@@ -1,0 +1,13 @@
+# Listing 4-66 Using NullIf
+ 
+from django.db.models.functions import NullIf
+ 
+books = Book.objects.annotate(
+    adjusted_price=NullIf("price", Decimal(0.0))
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+NULLIF(book.price, 0) AS adjusted_price
+FROM book;

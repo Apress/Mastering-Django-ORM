@@ -1,0 +1,14 @@
+# Listing 4-57 Using F for field comparison
+
+from django.db.models import F
+books = Book.objects.filter(
+    number_of_pages__gt=F("price")
+)
+
+# Equivalent SQL
+
+SELECT book.id, book.title, book.author_id, book.price,
+book.number_of_pages, book.published_date,
+book.created_at
+FROM book
+WHERE book.number_of_pages > book.price;

@@ -1,0 +1,13 @@
+# Listing 4-71 Using Length
+ 
+from django.db.models.functions import Length
+ 
+authors = Author.objects.annotate(
+    name_length=Length("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+LENGTH(author.name) AS name_length
+FROM author;

@@ -1,0 +1,14 @@
+# Listing 4-52 Using Paginator
+ 
+from django.core.paginator import Paginator
+ 
+books = Book.objects.all().order_by("id")
+ 
+paginator = Paginator(books, 5)
+ 
+page_number = 1
+ 
+page_obj = paginator.get_page(page_number)
+ 
+for book in page_obj:
+    print(book.title)

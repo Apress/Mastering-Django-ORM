@@ -1,0 +1,7 @@
+# Listing 4-43 Using db_table
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+ 
+    class Meta:  
+        db_table = "library_book"

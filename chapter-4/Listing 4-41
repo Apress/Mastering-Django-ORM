@@ -1,0 +1,9 @@
+# Listing 4-41 Using index
+
+first_book = Book.objects.all()[0]
+
+# Equivalent SQL
+
+SELECT ...
+FROM book
+LIMIT 1;

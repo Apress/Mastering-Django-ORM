@@ -1,0 +1,15 @@
+# Listing 4-56 Complex query using Q
+
+books = Book.objects.filter(
+    (
+        Q(price__gt=500) & 
+        Q(number_of_pages__gt=300)
+    ) |  
+    Q(
+        published_date__year=2025
+    ) 
+)
+
+# Equivalent SQL
+
+SELECT ... FROM book WHERE (book.price > 500 AND book.number_of_pages > 300) OR EXTRACT(YEAR FROM book.published_date) = 2025;

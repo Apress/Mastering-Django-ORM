@@ -1,0 +1,24 @@
+# Listing 4-50 Using Subquery with annotate
+ 
+from django.db.models import Subquery, OuterRef
+ 
+latest_book = Book.objects.filter(
+    author=OuterRef("pk")
+).order_by("-published_date").values("id")[:1]
+ 
+authors = Author.objects.annotate(
+    latest_book_id=Subquery(latest_book)
+)
+ 
+for author in authors:
+    print(author.name, author.latest_book_id)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+(SELECT book.id
+FROM book
+WHERE book.author_id = author.id
+ORDER BY book.published_date DESC
+LIMIT 1) AS latest_book_id
+FROM author;

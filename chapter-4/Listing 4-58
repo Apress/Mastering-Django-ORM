@@ -1,0 +1,11 @@
+# Listing 4-58 Updating using F
+
+Book.objects.filter(price__isnull=False).update(
+    price=F("price") + 100
+)
+
+# Equivalent SQL
+
+UPDATE book
+SET price = price + 100
+WHERE price IS NOT NULL;

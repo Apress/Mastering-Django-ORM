@@ -1,0 +1,13 @@
+# Listing 4-70 Using Right
+ 
+from django.db.models.functions import Right
+ 
+authors = Author.objects.annotate(
+    last_two=Right("name", 2)
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+RIGHT(author.name, 2) AS last_two
+FROM author;

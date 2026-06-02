@@ -1,0 +1,17 @@
+# Listing 4-63 Using Coalesce
+ 
+from django.db.models.functions import Coalesce
+from django.db.models import Value, DecimalField
+ 
+books = Book.objects.annotate(
+    final_price=Coalesce(
+        "price", Value(0), 
+        output_field=DecimalField(max_digits=6, decimal_places=2)
+    )
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+COALESCE(book.price, 0) AS final_price
+FROM book;

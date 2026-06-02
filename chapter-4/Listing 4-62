@@ -1,0 +1,14 @@
+# Listing 4-62 Using Cast
+ 
+from django.db.models.functions import Cast
+from django.db.models import CharField
+ 
+books = Book.objects.annotate(
+    price_text=Cast("price", output_field=CharField())
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+CAST(book.price AS VARCHAR) AS price_text
+FROM book;

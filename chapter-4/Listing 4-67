@@ -1,0 +1,17 @@
+# Listing 4-67 Using Chr
+ 
+from django.db.models.functions import Chr
+from django.db.models import Value
+ 
+books = Book.objects.annotate(
+    sample_char=Chr(Value(65))
+)
+ 
+for book in books:
+    print(book.title, book.sample_char)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+CHR(65) AS sample_char
+FROM book;

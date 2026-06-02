@@ -1,0 +1,8 @@
+# Listing 4-48 Using managed
+
+class BookReport(models.Model):
+    title = models.CharField(max_length=200)
+ 
+    class Meta:  
+        managed = False  
+        db_table = "book_report_view"

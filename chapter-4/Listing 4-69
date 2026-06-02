@@ -1,0 +1,13 @@
+# Listing 4-69 Using Left
+ 
+from django.db.models.functions import Left
+ 
+authors = Author.objects.annotate(
+    first_three=Left("name", 3)
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+LEFT(author.name, 3) AS first_three
+FROM author;

@@ -1,0 +1,8 @@
+# Listing 4-49 Using verbose names
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+ 
+    class Meta:  
+        verbose_name = "Book Item"  
+        verbose_name_plural = "Book Items"

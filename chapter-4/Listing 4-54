@@ -1,0 +1,14 @@
+# Listing 4-54 AND logic example
+
+books = Book.objects.filter(
+    Q(price__gt=100) & Q(number_of_pages__gt=100)
+)
+
+# Equivalent using filter
+
+books = Book.objects.filter(price__gt=100, number_of_pages__gt=100)
+
+# Equivalent SQL
+
+SELECT * FROM book
+WHERE price > 100 AND number_of_pages > 100;

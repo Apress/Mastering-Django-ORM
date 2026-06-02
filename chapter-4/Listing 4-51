@@ -1,0 +1,23 @@
+# Listing 4-51 Subquery inside filter
+ 
+from django.db.models import Avg
+ 
+avg_price = Book.objects.filter(
+    author=OuterRef("author")
+).values("author").annotate(
+    avg_price=Avg("price")
+).values("avg_price")
+ 
+books = Book.objects.filter(
+    price__gt=Subquery(avg_price)
+)
+ 
+# Equivalent SQL
+ 
+SELECT b1.*
+FROM book b1
+WHERE b1.price > (
+SELECT AVG(b2.price)
+FROM book b2
+WHERE b2.author_id = b1.author_id
+);

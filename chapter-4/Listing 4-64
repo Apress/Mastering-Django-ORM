@@ -1,0 +1,14 @@
+# Listing 4-64 Using Greatest
+ 
+from django.db.models.functions import Greatest
+ 
+books = Book.objects.annotate(
+    max_value=Greatest(
+        "price", "number_of_pages", output_field=IntegerField())
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+GREATEST(book.price, book.number_of_pages) AS max_value
+FROM book;

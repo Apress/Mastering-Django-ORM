@@ -1,0 +1,9 @@
+# Listing 4-46 Using abstract model
+
+class TimeStampedModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        abstract = True  
+
+class Book(TimeStampedModel):
+    title = models.CharField(max_length=200)
