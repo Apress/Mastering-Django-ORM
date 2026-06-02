@@ -1,0 +1,13 @@
+# Listing 3-58 Forward Querying of ForiegnKey
+
+rowling = Author.objects.get(name="J.K. Rowling")
+print(list(Book.objects.filter(author=rowling)))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE author_id = 1;

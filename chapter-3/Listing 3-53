@@ -1,0 +1,13 @@
+# Listing 3-53 Sum example
+
+from django.db.models import Sum
+
+print(Book.objects.aggregate(Sum('price')))
+
+# Output
+
+{'price__sum':<sum of all the books in the database>}
+
+# Equivalent SQL
+
+SELECT SUM(book.price) AS price__sum FROM book;

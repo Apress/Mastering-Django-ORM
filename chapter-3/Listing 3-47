@@ -1,0 +1,12 @@
+# Listing 3-47 week example
+
+qs = Book.objects.filter(created_at__week=25)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE EXTRACT(WEEK FROM created_at) = 25;

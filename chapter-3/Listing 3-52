@@ -1,0 +1,13 @@
+# Listing 3-52 Count example
+
+from django.db.models import Count
+
+print(Book.objects.aggregate(Count('id')))
+
+# Output
+
+{'id__count':<count of books>}
+
+# Equivalent SQL
+
+SELECT COUNT(book.id) AS id__count FROM book;

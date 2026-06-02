@@ -1,0 +1,12 @@
+# Listing 3-51 iso_year example
+
+qs = Book.objects.filter(created_at__iso_year=2025)
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE EXTRACT(ISOYEAR FROM created_at) = 2025;

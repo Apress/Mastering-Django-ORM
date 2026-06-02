@@ -1,0 +1,13 @@
+# Listing 3-59 Reverse Querying of ForiegnKey
+
+rowling = Author.objects.get(name="J.K. Rowling")
+print(list(rowling.book_set.all()))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL (reverse concept)
+
+SELECT * FROM book WHERE author_id = 1;

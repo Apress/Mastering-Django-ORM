@@ -1,0 +1,12 @@
+# Listing 3-48 week_day example
+
+qs = Book.objects.filter(created_at__week_day=1)  # Sunday in Django
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent  SQL
+
+SELECT * FROM book WHERE EXTRACT(DOW FROM created_at) + 1 = 1;

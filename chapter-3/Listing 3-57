@@ -1,0 +1,17 @@
+# Listing 3-57 Min example
+
+from django.db.models import Count
+
+authors = Author.objects.annotate(total_books=Count('book'))
+print([f"{a.name} ({a.total_books})" for a in authors])
+
+# Output
+
+['J.K. Rowling (2)', 'J.R.R. Tolkien (1)', 'C.S. Lewis (1)']
+
+# Equivalent SQL
+
+SELECT a.*, COUNT(b.id) AS total_books
+FROM author AS a
+LEFT JOIN book AS b ON a.id = b.author_id
+GROUP BY a.id;

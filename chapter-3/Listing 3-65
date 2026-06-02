@@ -1,0 +1,16 @@
+# Listing 3-65 Removing form  ManyToManyField 
+
+book = Book.objects.get(id=1) 
+
+fantasy = Genre.objects.get(name="Fantasy") 
+scifi = Genre.objects.get(name="Sci-Fi") 
+magic = Genre.objects.get(name= "Magic")
+
+book.genres.remove(fanstasy) # Remove single object
+book.genres.remove(scifi, magic) # Remove multiple
+
+# Equivalent SQL
+
+DELETE FROM book_genres WHERE (book_id = 1 AND genre_id IN (1)); # single
+
+DELETE FROM book_genres WHERE (book_id = 1 AND genre_id IN (2, 3)); # multiple

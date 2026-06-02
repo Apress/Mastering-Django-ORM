@@ -1,0 +1,14 @@
+# Listing 3-45 istartswith example
+
+qs = Book.objects.filter(title__istartswith="harry")
+print(list(qs))
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE UPPER(title) LIKE UPPER('harry%');

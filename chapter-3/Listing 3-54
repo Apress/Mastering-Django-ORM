@@ -1,0 +1,13 @@
+# Listing 3-54 Avg example
+
+from django.db.models import Avg
+
+print(Book.objects.aggregate(Avg('price')))
+
+# Output
+
+{'price__avg':<average price of the books>}
+
+# Equivalent SQL
+
+SELECT AVG(book.price) AS price__avg FROM book;

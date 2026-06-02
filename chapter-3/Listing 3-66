@@ -1,0 +1,8 @@
+# Listing 3-66 clear ManyToManyField
+
+book = Book.objects.get(id=1) 
+book.genres.clear()
+
+# Equivalent SQL
+
+DELETE FROM book_genres WHERE (book_id = 1);

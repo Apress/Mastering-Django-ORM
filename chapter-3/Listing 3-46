@@ -1,0 +1,13 @@
+# Listing 3-46 time example
+
+from datetime import time
+qs = Book.objects.filter(created_at__time=time(14, 30))
+print(list(qs))
+
+# Output
+
+[<Book: The Hobbit>]
+
+# Equivalent SQL
+
+SELECT * FROM book WHERE CAST(created_at AS time) = '14:30:00';

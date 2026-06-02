@@ -1,0 +1,6 @@
+# Listing 3-68 sample model for OneToOneField 
+
+class AuthorProfile(models.Model):
+    author = models.OneToOneField(Author, on_delete=models.CASCADE)
+    bio = models.TextField()
+    website = models.URLField()

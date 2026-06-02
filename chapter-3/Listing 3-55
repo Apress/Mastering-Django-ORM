@@ -1,0 +1,13 @@
+# Listing 3-55 Max example
+
+from django.db.models import Max
+
+print(Book.objects.aggregate(Max('price')))
+
+# Output
+
+{'price__max':<max value of the book>}
+
+# Equivalent SQL
+
+SELECT MAX(book.price) AS price__max FROM book;

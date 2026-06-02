@@ -1,0 +1,9 @@
+# Listing 3-70 Reverse Querying of OneToOneField
+
+rowling = Author.objects.get(name="J.K. Rowling")
+profile = rowling.authorprofile
+print(profile)
+ 
+# Equivalent SQL
+
+SELECT * FROM author_profile WHERE (author_id = 1);

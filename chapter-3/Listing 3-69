@@ -1,0 +1,9 @@
+# Listing 3-69 Forward Querying of OneToOneField
+
+rowling = Author.objects.get(name="J.K. Rowling")
+profile = AuthorProfile.objects.get(author=rowling)
+print(profile)
+ 
+# Equivalent SQL
+
+SELECT * FROM author_profile WHERE (author_id = 1);

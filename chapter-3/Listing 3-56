@@ -1,0 +1,13 @@
+# Listing 3-56 Min example
+
+from django.db.models import Min
+
+print(Book.objects.aggregate(Min('price')))
+
+# Output
+
+{'price__min':<min price of the books>}
+
+# Equivalent SQL
+
+SELECT MIN(book.price) AS price__min FROM book;

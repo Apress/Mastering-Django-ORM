@@ -1,0 +1,14 @@
+# Listing 3-63 Reverse Querying of ManyToManyField 
+
+fantasy = Genre.objects.get(name="Fantasy")
+books = fastasy.book_set.all()
+print(books)
+
+# Output
+
+[<Book: Harry Potter and the Philosopher's Stone>,
+ <Book: Harry Potter and the Chamber of Secrets>]
+
+# Equivalent SQL
+
+SELECT * FROM book INNER JOIN book_generes on (book.id = book_generes.book_id) WHERE book_generes.genere_id = 1
