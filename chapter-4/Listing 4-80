@@ -1,0 +1,13 @@
+# Listing 4-80 Using Ord
+ 
+from django.db.models.functions import Ord
+ 
+authors = Author.objects.annotate(
+    first_char_code=Ord("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+ASCII(author.name) AS first_char_code
+FROM author;

@@ -1,0 +1,13 @@
+# Listing 4-88 Using Ceil
+ 
+from django.db.models.functions import Ceil
+ 
+books = Book.objects.annotate(
+    rounded_up=Ceil("price")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+CEILING(book.price) AS rounded_up
+FROM book;

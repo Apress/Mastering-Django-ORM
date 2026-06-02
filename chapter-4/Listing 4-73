@@ -1,0 +1,13 @@
+# Listing 4-73 Using Upper
+ 
+from django.db.models.functions import Upper
+ 
+authors = Author.objects.annotate(
+    upper_name=Upper("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+UPPER(author.name) AS upper_name
+FROM author;

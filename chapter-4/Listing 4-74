@@ -1,0 +1,13 @@
+# Listing 4-74 Using LPad
+ 
+from django.db.models.functions import LPad
+ 
+authors = Author.objects.annotate(
+    padded_name=LPad("name", 10, Value("*"))
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+LPAD(author.name, 10, '*') AS padded_name
+FROM author;

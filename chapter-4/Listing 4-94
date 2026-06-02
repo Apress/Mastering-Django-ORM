@@ -1,0 +1,14 @@
+# Listing 4-94 Using Power
+ 
+from django.db.models.functions import Power
+from django.db.models import Value
+ 
+books = Book.objects.annotate(
+    squared_pages=Power("number_of_pages", Value(2))
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+POWER(book.number_of_pages, 2) AS squared_pages
+FROM book;

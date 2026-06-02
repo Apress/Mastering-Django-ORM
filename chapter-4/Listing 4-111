@@ -1,0 +1,23 @@
+# Listing 4-111 Using Conditional Aggregation
+ 
+from django.db.models import Sum, Case, When, Value, IntegerField
+ 
+result = Book.objects.aggregate(
+    expensive_books=Sum(
+        Case(
+            When(price__gt=500, then=Value(1)),
+            default=Value(0),
+            output_field=IntegerField()
+        )
+    )
+)
+ 
+# Equivalent SQL
+ 
+SELECT SUM(
+CASE
+WHEN book.price > 500 THEN 1
+ELSE 0
+END
+) AS expensive_books
+FROM book;

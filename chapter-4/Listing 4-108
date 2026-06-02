@@ -1,0 +1,15 @@
+# Listing 4-108 Using XOR(^) operator
+ 
+qs1 = Book.objects.filter(price__gt=100)
+ 
+qs2 = Book.objects.filter(number_of_pages__gt=200)
+ 
+books = qs1 ^ qs2
+ 
+# Equivalent SQL
+ 
+SELECT * FROM book 
+WHERE (
+(book.price > 100 OR book.number_of_pages > 200) AND 
+1 = (CASE WHEN book.price > 100 THEN 1 ELSE 0 END + CASE WHEN app_book.number_of_pages > 200 THEN 1 ELSE 0 END)
+)

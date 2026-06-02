@@ -1,0 +1,12 @@
+# Listing 4-107 Using OR(|) operator
+ 
+qs1 = Book.objects.filter(price__lt=100)
+ 
+qs2 = Book.objects.filter(number_of_pages__gt=300)
+ 
+books = qs1 | qs2
+ 
+# Equivalent SQL
+ 
+SELECT * FROM book
+WHERE price < 100 OR number_of_pages > 300;

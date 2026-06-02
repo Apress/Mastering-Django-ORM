@@ -1,0 +1,13 @@
+# Listing 4-84 Using SHA256
+ 
+from django.db.models.functions import SHA256
+ 
+authors = Author.objects.annotate(
+    name_hash=SHA256("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+SHA256(author.name) AS name_hash
+FROM author;

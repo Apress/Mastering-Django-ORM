@@ -1,0 +1,13 @@
+# Listing 4-72 Using Lower
+ 
+from django.db.models.functions import Lower
+ 
+authors = Author.objects.annotate(
+    lower_name=Lower("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+LOWER(author.name) AS lower_name
+FROM author;

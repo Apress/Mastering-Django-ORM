@@ -1,0 +1,12 @@
+# Listing 4-106 Using AND(&) operator
+ 
+qs1 = Book.objects.filter(price__gt=100)
+ 
+qs2 = Book.objects.filter(number_of_pages__gt=200)
+ 
+books = qs1 & qs2
+ 
+# Equivalent SQL
+ 
+SELECT * FROM book
+WHERE price > 100 AND number_of_pages > 200;

@@ -1,0 +1,13 @@
+# Listing 4-79 Using MD5
+ 
+from django.db.models.functions import MD5
+ 
+authors = Author.objects.annotate(
+    name_hash=MD5("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+MD5(author.name) AS name_hash
+FROM author;

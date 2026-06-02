@@ -1,0 +1,13 @@
+# Listing 4-96 Using Random
+ 
+from django.db.models.functions import Random
+ 
+books = Book.objects.annotate(
+    random_value=Random()
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+RANDOM() AS random_value
+FROM book;

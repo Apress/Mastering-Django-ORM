@@ -1,0 +1,13 @@
+# Listing 4-98 Using Sign
+ 
+from django.db.models.functions import Sign
+ 
+books = Book.objects.annotate(
+    price_sign=Sign("price")
+)
+  
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+SIGN(book.price) AS price_sign
+FROM book;

@@ -1,0 +1,13 @@
+# Listing 4-102 Using Extract
+ 
+from django.db.models.functions import Extract
+ 
+books = Book.objects.annotate(
+    published_year=Extract("published_date", "year")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+EXTRACT(YEAR FROM book.published_date) AS published_year
+FROM book;

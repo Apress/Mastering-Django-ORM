@@ -1,0 +1,14 @@
+# Listing 4-97 Using Round
+ 
+from django.db.models.functions import Round
+from django.db.models import Value
+ 
+books = Book.objects.annotate(
+    rounded_price=Round("price", Value(0))
+)
+  
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+ROUND(book.price, 0) AS rounded_price
+FROM book;

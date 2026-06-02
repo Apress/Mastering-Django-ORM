@@ -1,0 +1,13 @@
+# Listing 4-86 Using Substr
+ 
+from django.db.models.functions import Substr
+ 
+authors = Author.objects.annotate(
+    partial_name=Substr("name", 1, 3)
+)
+  
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+SUBSTR(author.name, 1, 3) AS partial_name
+FROM author;

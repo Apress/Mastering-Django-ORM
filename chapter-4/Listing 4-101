@@ -1,0 +1,13 @@
+# Listing 4-101 Using Now
+ 
+from django.db.models.functions import Now
+ 
+books = Book.objects.annotate(
+    current_time=Now()
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+STATEMENT_TIMESTAMP() AS current_time
+FROM book;

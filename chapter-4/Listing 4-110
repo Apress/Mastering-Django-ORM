@@ -1,0 +1,17 @@
+# Listing 4-110 Using Conditional Filtering
+ 
+from django.db.models import Case, When, Value, IntegerField
+ 
+books = Book.objects.annotate(
+    expensive_flag=Case(
+        When(price__gt=500, then=Value(1)),
+        default=Value(0),
+        output_field=IntegerField()
+    )
+).filter(expensive_flag=1)
+ 
+# Equivalent SQL
+ 
+SELECT ..., CASE WHEN book.price > 500 THEN 1 ELSE 0 END AS expensive_flag 
+FROM book 
+WHERE CASE WHEN (book.price > 500) THEN 1 ELSE 0 END = 1 

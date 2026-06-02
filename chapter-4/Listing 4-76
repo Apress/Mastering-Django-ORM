@@ -1,0 +1,13 @@
+# Listing 4-76 Using Trim
+ 
+from django.db.models.functions import Trim
+ 
+authors = Author.objects.annotate(
+    clean_name=Trim("name")
+) 
+
+# Equivalent SQL
+ 
+SELECT author.id,
+TRIM(author.name) AS clean_name
+FROM author;

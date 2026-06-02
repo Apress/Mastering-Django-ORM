@@ -1,0 +1,13 @@
+# Listing 4-87 Using Abs
+ 
+from django.db.models.functions import Abs
+ 
+books = Book.objects.annotate(
+    absolute_pages=Abs("number_of_pages")
+)
+  
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+ABS(book.number_of_pages) AS absolute_pages
+FROM book;

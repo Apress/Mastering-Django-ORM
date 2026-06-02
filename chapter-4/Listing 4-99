@@ -1,0 +1,13 @@
+# Listing 4-99 Using Sqrt
+ 
+from django.db.models.functions import Sqrt
+ 
+books = Book.objects.annotate(
+    sqrt_pages=Sqrt("number_of_pages")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+SQRT(book.number_of_pages) AS sqrt_pages
+FROM book;

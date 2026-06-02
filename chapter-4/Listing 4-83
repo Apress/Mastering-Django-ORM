@@ -1,0 +1,13 @@
+# Listing 4-83 Using Reverse
+ 
+from django.db.models.functions import Reverse
+ 
+authors = Author.objects.annotate(
+    reversed_name=Reverse("name")
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+REVERSE(author.name) AS reversed_name
+FROM author;

@@ -1,0 +1,22 @@
+# Listing 4-109 Using Conditional Annotation
+ 
+from django.db.models import Case, When, Value, CharField
+ 
+books = Book.objects.annotate(
+    price_category=Case(
+        When(price__gt=500, then=Value("Expensive")),
+        When(price__gt=200, then=Value("Moderate")),
+        default=Value("Cheap"),
+        output_field=CharField()
+    )
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+CASE
+WHEN book.price > 500 THEN 'Expensive'
+WHEN book.price > 200 THEN 'Moderate'
+ELSE 'Cheap'
+END AS price_category
+FROM book;

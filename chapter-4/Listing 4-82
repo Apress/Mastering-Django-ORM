@@ -1,0 +1,14 @@
+# Listing 4-82 Using Replace
+ 
+from django.db.models.functions import Replace
+from django.db.models import Value
+ 
+authors = Author.objects.annotate(
+    updated_name=Replace("name", Value("a"), Value("@"))
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+REPLACE(author.name, 'a', '@') AS updated_name
+FROM author;

@@ -1,0 +1,13 @@
+# Listing 4-91 Using Ln
+ 
+from django.db.models.functions import Ln
+ 
+books = Book.objects.annotate(
+    natural_log=Ln("price")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+LN(book.price) AS natural_log
+FROM book;

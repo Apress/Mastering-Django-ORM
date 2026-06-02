@@ -1,0 +1,16 @@
+# Listing 4-105 Using JSONObject
+ 
+from django.db.models.functions import JSONObject
+ 
+books = Book.objects.annotate(
+    book_info=JSONObject(
+        title="title",
+        price="price"
+    )
+)
+  
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+JSON_OBJECT('title', book.title, 'price', book.price) AS book_info
+FROM book;

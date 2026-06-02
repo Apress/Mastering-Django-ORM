@@ -1,0 +1,13 @@
+# Listing 4-89 Using Floor
+ 
+from django.db.models.functions import Floor
+ 
+books = Book.objects.annotate(
+    rounded_down=Floor("price")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+FLOOR(book.price) AS rounded_down
+FROM book;

@@ -1,0 +1,13 @@
+# Listing 4-90 Using Exp
+ 
+from django.db.models.functions import Exp
+ 
+books = Book.objects.annotate(
+    exp_value=Exp("number_of_pages")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+EXP(book.number_of_pages) AS exp_value
+FROM book;

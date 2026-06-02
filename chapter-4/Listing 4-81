@@ -1,0 +1,13 @@
+# Listing 4-81 Using Repeat
+ 
+from django.db.models.functions import Repeat
+ 
+authors = Author.objects.annotate(
+    repeated_name=Repeat("name", 2)
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+REPEAT(author.name, 2) AS repeated_name
+FROM author;

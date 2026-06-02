@@ -1,0 +1,13 @@
+# Listing 4-100 Using Sin
+ 
+from django.db.models.functions import Sin
+ 
+books = Book.objects.annotate(
+    sin_value=Sin("number_of_pages")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+SIN(book.number_of_pages) AS sin_value
+FROM book;

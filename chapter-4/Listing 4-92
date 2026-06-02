@@ -1,0 +1,14 @@
+# Listing 4-92 Using Log
+ 
+from django.db.models.functions import Log
+from django.db.models import Value
+ 
+books = Book.objects.annotate(
+    log_base_10=Log(Value(10), "price")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+LOG(10, book.price) AS log_base_10
+FROM book;

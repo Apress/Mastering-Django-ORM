@@ -1,0 +1,14 @@
+# Listing 4-75 Using RPad
+ 
+from django.db.models.functions import RPad
+from django.db.models import Value
+ 
+authors = Author.objects.annotate(
+    padded_name=RPad("name", 10, Value("-"))
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+RPAD(author.name, 10, '-') AS padded_name
+FROM author;

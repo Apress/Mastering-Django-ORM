@@ -1,0 +1,19 @@
+# Listing 4-112 Using Conditional Update
+ 
+from django.db.models import Case, When, Value, DecimalField
+ 
+Book.objects.update(
+    price=Case(
+        When(number_of_pages__gt=300, then=Value(600)),
+        default="price",
+        output_field=DecimalField(max_digits=6, decimal_places=2)
+    )
+)
+ 
+# Equivalent SQL
+ 
+UPDATE book
+SET price = CASE
+WHEN number_of_pages > 300 THEN 600
+ELSE price
+END;

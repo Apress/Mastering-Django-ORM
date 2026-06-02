@@ -1,0 +1,13 @@
+# Listing 4-104 Using JSONArray
+ 
+from django.db.models.functions import JSONArray
+ 
+books = Book.objects.annotate(
+    book_info=JSONArray("title", "price")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+JSON_ARRAY(book.title, book.price) AS book_info
+FROM book;

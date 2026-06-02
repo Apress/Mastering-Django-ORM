@@ -1,0 +1,13 @@
+# Listing 4-95 Using Radians
+ 
+from django.db.models.functions import Radians
+ 
+books = Book.objects.annotate(
+    pages_in_radians=Radians("number_of_pages")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+RADIANS(book.number_of_pages) AS pages_in_radians
+FROM book;

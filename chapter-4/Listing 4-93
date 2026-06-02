@@ -1,0 +1,14 @@
+# Listing 4-93 Using Mod
+ 
+from django.db.models.functions import Mod
+from django.db.models import Value
+ 
+books = Book.objects.annotate(
+    remainder=Mod("number_of_pages", Value(100))
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+MOD(book.number_of_pages, 100) AS remainder
+FROM book;

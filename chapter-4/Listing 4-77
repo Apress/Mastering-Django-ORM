@@ -1,0 +1,7 @@
+# Listing 4-77 Using LTrim
+ 
+from django.db.models.functions import LTrim
+ 
+authors = Author.objects.annotate(
+    left_clean=LTrim("name")
+)

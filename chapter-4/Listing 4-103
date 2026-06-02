@@ -1,0 +1,13 @@
+# Listing 4-103 Using Trunc
+ 
+from django.db.models.functions import Trunc
+ 
+books = Book.objects.annotate(
+    published_month=Trunc("published_date", "month")
+)
+ 
+# Equivalent SQL
+ 
+SELECT book.id, book.title,
+DATE_TRUNC('month', book.published_date) AS published_month
+FROM book;

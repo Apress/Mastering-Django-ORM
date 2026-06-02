@@ -1,0 +1,14 @@
+# Listing 4-85 Using StrIndex
+ 
+from django.db.models.functions import StrIndex
+from django.db.models import Value
+ 
+authors = Author.objects.annotate(
+    position=StrIndex("name", Value("a"))
+)
+ 
+# Equivalent SQL
+ 
+SELECT author.id, author.name,
+STRPOS(author.name, 'a') AS position
+FROM author;
