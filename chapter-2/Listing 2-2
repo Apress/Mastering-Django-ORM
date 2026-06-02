@@ -1,0 +1,6 @@
+# Listing 2-2 Equivalent SQL representation
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NULL
+);

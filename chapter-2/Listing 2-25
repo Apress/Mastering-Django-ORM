@@ -1,0 +1,5 @@
+# Listing 2-25 example of unique_for_data
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200, unique_for_date="published_date")
+    published_date = models.DateField()

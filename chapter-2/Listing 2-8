@@ -1,0 +1,6 @@
+# Listing 2-8 customize column_name SQL equivalent
+
+CREATE TABLE my_app_employee (
+    id BIGSERIAL PRIMARY KEY,
+    "emp_name" varchar(100) NOT NULL
+);

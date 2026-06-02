@@ -1,0 +1,8 @@
+# Listing 2-16 SQL equivalents of SQL
+
+CREATE TABLE customer (
+    id BIGSERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL 
+);
+ 
+CREATE INDEX customer_email_idx ON customer (email);

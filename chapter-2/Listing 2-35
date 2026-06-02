@@ -1,0 +1,6 @@
+# Listing 2-35 SQL equivalent of BooleanField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    is_active BOOLEAN NOT NULL
+);

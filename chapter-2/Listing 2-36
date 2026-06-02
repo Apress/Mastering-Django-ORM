@@ -1,0 +1,4 @@
+# Listing 2-36 Example model with DateTimeField
+
+class Example(models.Model):
+    created_at = models.DateTimeField()

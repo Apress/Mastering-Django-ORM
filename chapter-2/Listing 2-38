@@ -1,0 +1,4 @@
+# Listing 2-38 Example model with DateField
+
+class Example(models.Model):
+    dob = models.DateField()

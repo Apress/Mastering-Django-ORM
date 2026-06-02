@@ -1,0 +1,6 @@
+# Listing 2-12 example of dynamic default
+
+import datetime
+
+class Event(models.Model):
+    created_at = models.DateTimeField(default=datetime.datetime.now)

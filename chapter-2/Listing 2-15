@@ -1,0 +1,4 @@
+# Listing 2-15 example of db_index
+
+class Customer(models.Model):
+    email = models.CharField(max_length=255, db_index=True)

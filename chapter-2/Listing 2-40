@@ -1,0 +1,4 @@
+# Listing 2-40 Example model with EmailField
+
+class Example(models.Model):
+    email = models.EmailField(unique=True, max_length=254)

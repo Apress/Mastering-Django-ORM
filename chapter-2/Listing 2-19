@@ -1,0 +1,7 @@
+# Listing 2-19 error_messages example
+
+class Product(models.Model):
+    name = models.CharField(
+        max_length=100,
+        error_messages={"max_length": "Name cannot exceed 100 characters!"}
+    )

@@ -1,0 +1,4 @@
+# Listing 2-9 example of column with db_comment
+
+class Product(models.Model):
+    price = models.DecimalField(max_digits=10, decimal_places=2, db_comment="Price in USD")

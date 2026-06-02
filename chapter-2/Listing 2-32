@@ -1,0 +1,4 @@
+# Listing 2-32 Example model with IntegerField
+
+class Example(models.Model): 
+    quantity = models.IntegerField()

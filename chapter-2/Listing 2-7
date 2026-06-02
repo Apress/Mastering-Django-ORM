@@ -1,0 +1,4 @@
+# Listing 2-7 customize column_name example
+
+class Employee(models.Model):
+    full_name = models.CharField(max_length=100, db_column="emp_name")

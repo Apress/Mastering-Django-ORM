@@ -1,0 +1,4 @@
+# Listing 2-13 example of db_default
+
+class Order(models.Model):
+    status = models.CharField(max_length=10, db_default="pending")

@@ -1,0 +1,6 @@
+# Listing 2-39 SQL equivalent of DateField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    dob date NOT NULL
+);

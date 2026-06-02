@@ -1,0 +1,4 @@
+# Listing 2-1 Example model with null
+
+class Example(models.Model): 
+    name = models.CharField(max_length=100, null=True)

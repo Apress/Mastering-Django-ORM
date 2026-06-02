@@ -1,0 +1,6 @@
+# Listing 2-33 SQL equivalent of IntegerField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    quantity INTEGER NOT NULL
+);

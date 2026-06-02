@@ -1,0 +1,4 @@
+# Listing 2-20 error_messages example
+
+class UserProfile(models.Model):
+    bio = models.TextField(help_text="Write a short biography about yourself.")

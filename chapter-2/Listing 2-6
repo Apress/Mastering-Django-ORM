@@ -1,0 +1,11 @@
+# Listing 2-6 Enumeration Type example
+
+from django.db import models
+
+class Status(models.TextChoices):
+    AVAILABLE = 'A', 'Available'
+    OUT_OF_STOCK = 'O', 'Out of Stock'
+    DISCONTINUED = 'D', 'Discontinued'
+
+class Product(models.Model):
+    status = models.CharField(max_length=1, choices=Status.choices)

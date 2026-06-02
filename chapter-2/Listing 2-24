@@ -1,0 +1,6 @@
+# Listing 2-24 equivalents SQL
+
+CREATE TABLE userinfo (
+    id BIGSERIAL PRIMARY KEY,
+    username varchar(150) NOT NULL UNIQUE
+);

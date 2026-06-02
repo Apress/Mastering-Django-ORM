@@ -1,0 +1,4 @@
+# Listing 2-28 Example model with CharField
+
+class Example(models.Model): 
+    name = models.CharField(max_length=100, null=True)

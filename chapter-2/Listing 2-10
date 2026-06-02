@@ -1,0 +1,7 @@
+# Listing 2-10 SQL equivalents of db_comment
+
+CREATE TABLE product (
+    id BIGSERIAL PRIMARY KEY,
+    price DECIMAL(10, 2) NOT NULL
+);
+COMMENT ON COLUMN product.price IS 'Price in USD';

@@ -1,0 +1,6 @@
+# Listing 2-14 SQL equivalents of db_default
+
+CREATE TABLE order (
+    id BIGSERIAL PRIMARY KEY,
+    status varchar(10) DEFAULT 'pending' NOT NULL
+);

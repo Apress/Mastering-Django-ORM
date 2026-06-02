@@ -1,0 +1,4 @@
+# Listing 2-30 Example model with TextField
+
+class Example(models.Model): 
+    description = models.TextField(null=True)

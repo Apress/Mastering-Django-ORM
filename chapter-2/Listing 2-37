@@ -1,0 +1,6 @@
+# Listing 2-37 SQL equivalent of DateTimeField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    created_at datetime NOT NULL
+);

@@ -1,0 +1,9 @@
+# Listing 2-5 choice example
+
+class Product(models.Model):
+    STATUS_CHOICES = [
+        ('A', 'Available'),
+        ('O', 'Out of Stock'),
+        ('D', 'Discontinued'),
+    ]
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)

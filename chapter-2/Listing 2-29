@@ -1,0 +1,6 @@
+# Listing 2-29 SQL equivalent of CharField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NULL
+);

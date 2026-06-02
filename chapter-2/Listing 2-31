@@ -1,0 +1,6 @@
+# Listing 2-31 SQL equivalent of TextField
+
+CREATE TABLE example (
+    id BIGSERIAL PRIMARY KEY,
+    description TEXT NULL
+);

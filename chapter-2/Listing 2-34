@@ -1,0 +1,4 @@
+# Listing 2-34 Example model with BooleanField
+
+class Example(models.Model):
+    is_active = models.BooleanField(default=True)
