@@ -1,0 +1,5 @@
+# Listing 8-5 Incorrect usage
+
+async def book_count(request):
+    count = Book.objects.count()  # Synchronous ORM call
+    return JsonResponse({"count": count})

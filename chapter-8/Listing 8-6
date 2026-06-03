@@ -1,0 +1,5 @@
+# Listing 8-6 Using async ORM Function
+ 
+async def book_count(request):
+    count = await Book.objects.acount()
+    return JsonResponse({"count": count})

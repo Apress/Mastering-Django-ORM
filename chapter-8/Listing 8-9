@@ -1,0 +1,7 @@
+# Listing 8-9 Using Async view
+
+from django.http import JsonResponse
+ 
+async def book_count(request):
+    count = await Book.objects.acount()
+    return JsonResponse({"books": count})

@@ -1,0 +1,7 @@
+# Listing 8-8 Using async_to_sync 
+
+from asgiref.sync import async_to_sync
+ 
+def sync_view(request):
+    result = async_to_sync(async_function)()
+    return JsonResponse({"result": result})

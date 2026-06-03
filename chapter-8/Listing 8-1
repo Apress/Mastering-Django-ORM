@@ -1,0 +1,9 @@
+# Listing 8-1 Fetching a single object asynchronously
+
+book = await Book.objects.aget(id=1)
+
+# Equivalent SQL:
+
+SELECT "myapp_book"."id", "myapp_book"."title"
+FROM "myapp_book"
+WHERE "myapp_book"."id" = 1;

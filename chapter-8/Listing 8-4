@@ -1,0 +1,11 @@
+# Listing 8-4 Transaction with blocking code
+
+from django.db import transaction
+from asgiref.sync import sync_to_async
+import time
+ 
+@sync_to_async
+def bad_example():
+    with transaction.atomic():
+        Book.objects.create(title="Temp")
+        time.sleep(5)  # Bad practice
