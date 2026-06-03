@@ -1,0 +1,10 @@
+Listing 5-94 using values
+
+books = Book.objects.values("id", "title")
+
+Output
+
+[
+    {"id": 1, "title": "Django Basics"},
+    {"id": 2, "title": "Advanced Django"},
+] 

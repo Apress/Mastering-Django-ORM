@@ -1,0 +1,4 @@
+# Listing 5-89 creating 100,000 books without batch_size
+
+books = [Book(title=f"Book {i}") for i in range(100000)]
+Book.objects.bulk_create(books) 

@@ -1,0 +1,10 @@
+# Listing 5-22 Model with database level unique contraint
+ 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['title', 'author'], name='unique_title_author')
+        ]

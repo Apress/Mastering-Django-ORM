@@ -1,0 +1,12 @@
+# Listing 5-81 hardcoding database settings in code
+ 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangoorm',
+        'USER': 'postgres',
+        'PASSWORD': 'supersecretpassword',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}

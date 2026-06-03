@@ -1,0 +1,6 @@
+# Listing 5-24 using values
+ 
+books = Book.objects.values('title')
+ 
+for book in books:
+    print(book['title'])

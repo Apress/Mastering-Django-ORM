@@ -1,0 +1,5 @@
+# Listing 5-38 code with N+1 Issues
+ 
+books = Book.objects.all()
+for book in books: 
+    print(book.title, book.genres.all())

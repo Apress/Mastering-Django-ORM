@@ -1,0 +1,8 @@
+# Listing 5-28 using transaction
+
+from django.db import transaction
+
+with transaction.atomic():
+    book.stock_count -= 1
+    book.save()
+    stock_log.save()

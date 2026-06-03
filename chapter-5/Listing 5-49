@@ -1,0 +1,4 @@
+# Listing 5-49 looping books using iterator
+
+for book in Book.objects.iterator():
+    process(book)

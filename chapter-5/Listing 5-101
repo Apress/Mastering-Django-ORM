@@ -1,0 +1,4 @@
+# Listing 5-101 using parameterized queries
+
+query = "SELECT * FROM library_book WHERE title = %s"
+books = Book.objects.raw(query, [title])

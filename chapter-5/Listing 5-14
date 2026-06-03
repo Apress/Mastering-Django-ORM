@@ -1,0 +1,5 @@
+# Listing 5-14 Book model with index
+
+class Book(models.Model):
+    title = models.CharField(max_length=100, db_index=True)
+    description = models.TextField()

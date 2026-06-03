@@ -1,0 +1,8 @@
+# Listing 5-78 casting price to integer
+
+from django.db.models import IntegerField
+from django.db.models.functions import Cast
+ 
+Product.objects.annotate(
+    price_int=Cast('price', IntegerField())
+).filter(price_int__gt=100)

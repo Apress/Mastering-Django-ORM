@@ -1,0 +1,5 @@
+# Listing 5-11 Incorrect auto_now and auto_now_add
+ 
+class Book(models.Model):
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now_add=True)

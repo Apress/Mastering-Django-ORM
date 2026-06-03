@@ -1,0 +1,5 @@
+# Listing 5-56 Added sku to book
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    sku = models.CharField(max_length=50, unique=True)

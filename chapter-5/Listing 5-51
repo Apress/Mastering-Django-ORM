@@ -1,0 +1,5 @@
+# Listing 5-51 using database function
+
+from django.db.models.functions import Lower
+
+books = Book.objects.order_by(Lower('title'))

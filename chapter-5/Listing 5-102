@@ -1,0 +1,9 @@
+# Listing 5-102 override save without super save
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField()
+    
+    def save(self, *args, **kwargs): 
+        self.slug = self.title.lower().replace(" ", "-")
+        # missing the super().save()

@@ -1,0 +1,5 @@
+# Listing 5-20 Sample Book model
+ 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)

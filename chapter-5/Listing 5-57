@@ -1,0 +1,5 @@
+# Listing 5-57 updated the sales model
+
+class Sale(models.Model):
+    book = models.ForeignKey('library.Book', to_field='sku', on_delete=models.CASCADE)
+    quantity = models.IntegerField()

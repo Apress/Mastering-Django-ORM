@@ -1,0 +1,5 @@
+# Listing 5-53 using timezone module
+
+from django.utils import timezone
+ 
+books = Book.objects.filter(published_at__lte=timezone.now())

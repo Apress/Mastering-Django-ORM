@@ -1,0 +1,8 @@
+# Listing 5-58 Directly importing model in data migraton (Wrong approch)
+
+from myapp.models import Book
+
+def update_title(apps, schema_editor):
+    for book in Book.objects.all():
+        book.title = book.title.upper()
+        book.save()

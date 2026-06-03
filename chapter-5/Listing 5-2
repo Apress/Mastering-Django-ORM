@@ -1,0 +1,5 @@
+# Listing 5-2 Using TextField for large text
+ 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()  # Correct choice for long text

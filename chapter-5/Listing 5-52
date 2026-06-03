@@ -1,0 +1,5 @@
+# Listing 5-52 using datetime
+ 
+from datetime import datetime
+
+books = Book.objects.filter(published_at__lte=datetime.now())

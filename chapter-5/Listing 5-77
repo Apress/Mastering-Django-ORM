@@ -1,0 +1,4 @@
+# Listing 5-77 wrong table implementation
+
+class Product(models.Model):
+    price = models.CharField(max_length=20)

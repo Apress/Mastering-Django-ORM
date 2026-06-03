@@ -1,0 +1,10 @@
+# Listing 5-95 using values_list
+
+books = Book.objects.values_list("id", "title") 
+
+# Output
+
+[
+    (1, "Django Basics"),
+    (2, "Advanced Django"),
+] 

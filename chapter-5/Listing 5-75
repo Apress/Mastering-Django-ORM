@@ -1,0 +1,8 @@
+# Listing 5-75 wrapping get in a try/except block
+
+try:
+    book = Book.objects.get(title="Django")
+except Book.DoesNotExist:
+    book = None
+except Book.MultipleObjectsReturned:
+    book = Book.objects.filter(title="Django").first()

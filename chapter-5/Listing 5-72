@@ -1,0 +1,5 @@
+# Listing 5-72 simple stock deduction
+
+book = Book.objects.get(id=1)
+book.stock_count -= 1
+book.save()

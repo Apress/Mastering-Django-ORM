@@ -1,0 +1,8 @@
+# Listing 5-59 using get_model in data migraton 
+ 
+def update_title (apps, schema_editor):
+    Book = apps.get_model('myapp', 'Book')
+ 
+    for book in Book.objects.all():
+        book.title = book.title.upper()
+        book.save()

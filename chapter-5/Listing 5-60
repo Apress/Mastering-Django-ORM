@@ -1,0 +1,5 @@
+# Listing 5-60 wrong model implementation
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author_id = models.IntegerField()

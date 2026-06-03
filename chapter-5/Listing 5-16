@@ -1,0 +1,5 @@
+# Listing 5-16 N+1 in ForeignKey
+
+books = Book.objects.all()
+for book in books:
+    print(book.title, book.author.name)

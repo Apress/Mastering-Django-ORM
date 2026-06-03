@@ -1,0 +1,5 @@
+# Listing 5-18 N+1 in ManyToManyField
+
+books = Book.objects.all()
+for book in books: 
+    print(book.title, book.genres.all())

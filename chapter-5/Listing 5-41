@@ -1,0 +1,4 @@
+Listing 5-41 Accessing author ids wrong way
+
+for book in Book.objects.all():
+    print(book.author.id)

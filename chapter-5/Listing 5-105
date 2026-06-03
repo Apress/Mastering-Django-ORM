@@ -1,0 +1,7 @@
+# Listing 5-105 logic after saving
+
+def save(self, *args, **kwargs):
+   is_new = self.pk is None
+   super().save(*args, **kwargs)
+   if is_new:
+       create_related_object(self)

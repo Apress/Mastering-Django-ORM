@@ -1,0 +1,4 @@
+# Listing 5-92 using count
+
+books = Book.objects.filter(is_published=True)
+total = books.count()

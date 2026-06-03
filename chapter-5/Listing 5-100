@@ -1,0 +1,4 @@
+# Listing 5-100 raw SQL without parameters
+
+query = f"SELECT * FROM library_book WHERE title = '{title}'"
+books = Book.objects.raw(query)

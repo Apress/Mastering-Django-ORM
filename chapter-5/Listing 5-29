@@ -1,0 +1,10 @@
+# Listing 5-29 Book model with custom save logic
+
+from django.db import transaction
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    
+    def save(self, *args, **kwargs):
+        self.title = self.title.upper()
+        super().save(*args, **kwargs)

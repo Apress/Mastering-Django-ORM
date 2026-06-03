@@ -1,0 +1,5 @@
+# Listing 5-1 CharField instead of TextField for long descriptions
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)

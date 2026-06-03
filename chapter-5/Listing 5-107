@@ -1,0 +1,8 @@
+# Listing 5-107 proper use of select_for_update
+
+from django.db import transaction
+ 
+with transaction.atomic():
+    order = Order.objects.select_for_update().get(id=1)
+    order.status = "completed"
+    order.save()

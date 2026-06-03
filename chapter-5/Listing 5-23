@@ -1,0 +1,5 @@
+# Listing 5-23 Listing all the book titles
+ 
+books = Book.objects.all()
+for book in books:
+    print(book.title)

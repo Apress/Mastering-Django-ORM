@@ -1,0 +1,5 @@
+# Listing 5-8 Book model with proper null and blank settings
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    publish_date = models.DateField(null=True, blank=True)

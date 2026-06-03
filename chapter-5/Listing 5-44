@@ -1,0 +1,8 @@
+# Listing 5-44 Check book exists using first
+ 
+if Book.objects.filter(title="Django").first():
+    print("Book exists")
+
+# Equivalent SQL:
+
+SELECT * FROM book WHERE title = 'Django' LIMIT 1;

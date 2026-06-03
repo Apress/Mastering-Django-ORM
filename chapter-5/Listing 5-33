@@ -1,0 +1,5 @@
+#Listing 5-33 using atomic update
+ 
+from django.db.models import F
+
+Book.objects.filter(id=1).update(stock_count=F('stock_count') - 1) 

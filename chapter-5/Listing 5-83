@@ -1,0 +1,5 @@
+# Listing 5-83 exporting environment variables
+
+export DB_NAME=djangoorm
+export DB_USER=postgres
+export DB_PASSWORD=supersecretpassword

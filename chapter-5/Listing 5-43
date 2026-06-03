@@ -1,0 +1,8 @@
+# Listing 5-43 Check book exists using count
+ 
+if Book.objects.filter(title="Django").count() > 0:
+    print("Book exists")
+ 
+# Generated SQL:
+
+SELECT COUNT(*) FROM book WHERE title = 'Django';

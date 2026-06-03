@@ -1,0 +1,5 @@
+# Listing 5-50 sorting using python method
+
+books = Book.objects.all()
+ 
+sorted_books = sorted(books, key=lambda b: b.title.lower())

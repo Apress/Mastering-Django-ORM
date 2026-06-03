@@ -1,0 +1,5 @@
+# Listing 5-31 QuerySet laziness example
+
+books = Book.objects.filter(published=True)
+# Some books are unpublished here
+list(books)  # Results may differ from when books was first assigned

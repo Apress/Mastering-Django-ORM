@@ -1,0 +1,4 @@
+# Listing 5-98 Accessing other fields  
+
+book = books.first()
+print(book.description) 

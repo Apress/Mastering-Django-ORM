@@ -1,0 +1,4 @@
+# Listing 5-3 Using CharField for Numeric Data
+
+class Product(models.Model):
+    price = models.CharField(max_length=20) 

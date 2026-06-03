@@ -1,0 +1,5 @@
+# Listing 5-32 decrement stock count 
+ 
+book = Book.objects.get(id=1)
+book.stock_count = book.stock_count - 1
+book.save()

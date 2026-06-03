@@ -1,0 +1,4 @@
+# Listing 5-42 accessing auto <fk>_id field
+
+for book in Book.objects.all():
+    print(book.author_id)

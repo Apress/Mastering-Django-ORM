@@ -1,0 +1,7 @@
+# Listing 5-80 cleaning product data before casting
+
+from django.db.models import IntegerField
+
+Product.objects.exclude(price__regex=r'[^0-9]').annotate(
+    price_int=Cast('price', IntegerField())
+).filter(price_int__gt=100)

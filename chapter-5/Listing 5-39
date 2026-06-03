@@ -1,0 +1,13 @@
+# Listing 5-39 listing queries
+ 
+from django.db import connection
+print(connection.queries)
+
+# Output
+
+[
+    {
+        'sql': 'SELECT id, title FROM book;',
+        'time': '0.002'
+    }
+]

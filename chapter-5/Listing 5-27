@@ -1,0 +1,5 @@
+# Listing 5-27 Not using transaction
+ 
+book.stock_count -= 1
+book.save()
+stock_log.save()  # Error here causes mismatch between book and log

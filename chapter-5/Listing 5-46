@@ -1,0 +1,5 @@
+# Listing 5-46 Manually checking and creating
+
+book = Book.objects.filter(title="Django").first()
+if not book:
+    book = Book.objects.create(title="Django")

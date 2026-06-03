@@ -1,0 +1,12 @@
+# Listing 5-15 Sample model
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Genre(models.Model):
+    name = models.CharField(max_length=50)
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    genres = models.ManyToManyField(Genre, blank=True)

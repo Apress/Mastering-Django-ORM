@@ -1,0 +1,6 @@
+# Listing 5-70 Example task
+
+def long_running_task():
+    # Some heavy processing
+    for item in large_dataset:
+        process(item)

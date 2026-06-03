@@ -1,0 +1,7 @@
+# Listing 5-21 Code level uniqueness check
+ 
+if not Book.objects.filter(title='Django ORM', author='Author abc').exists():
+    Book.objects.create(
+        title='Django ORM Guide', 
+        author='Author abc'
+    )

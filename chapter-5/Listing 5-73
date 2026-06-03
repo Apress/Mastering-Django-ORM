@@ -1,0 +1,8 @@
+#Listing 5-73 using select_for_update
+
+from django.db import transaction
+
+with transaction.atomic():
+    book = Book.objects.select_for_update().get(id=1)
+    book.stock_count -= 1
+    book.save()

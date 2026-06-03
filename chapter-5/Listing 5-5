@@ -1,0 +1,4 @@
+# Listing 5-5 Using IntegerField instead of BooleanField
+ 
+class User(models.Model):
+    is_active = models.IntegerField()

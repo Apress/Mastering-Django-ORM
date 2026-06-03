@@ -1,0 +1,9 @@
+# Listing 5-104 correct implementation of save
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField()
+    
+    def save(self, *args, **kwargs): 
+        self.slug = self.title.lower().replace(" ", "-")
+        super().save(*args, **kwargs)

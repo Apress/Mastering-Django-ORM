@@ -1,0 +1,13 @@
+# Listing 5-30 Bulk operation with helper function
+
+def prepare_books(book_list):
+    for book in book_list:
+        book.title = book.title.upper()
+    return book_list
+ 
+books = prepare_books([
+    Book(title="Book 1"),
+    Book(title="Book 2"),
+])
+ 
+Book.objects.bulk_create(books)

@@ -1,0 +1,10 @@
+#Listing 5-64 using paginator
+
+from django.core.paginator import Paginator
+
+def book_list(request):
+    book_list = Book.objects.all()
+    paginator = Paginator(book_list, 10)
+    page = request.GET.get('page')
+    books = paginator.get_page(page)
+    return render(request, "books.html", {"books": books})

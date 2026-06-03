@@ -1,0 +1,7 @@
+# Listing 5-85 Annotate Before Filter
+
+from django.db.models import Count
+
+authors = Author.objects.annotate(book_count=Count('book')).filter(
+    book__rating__gte=4
+)

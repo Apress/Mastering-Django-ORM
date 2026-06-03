@@ -1,0 +1,11 @@
+# Listing 5-69 Better Approach for Model-Specific Logic
+
+from django.utils.text import slugify
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)

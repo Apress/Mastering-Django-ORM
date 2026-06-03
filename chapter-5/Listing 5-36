@@ -1,0 +1,5 @@
+# Listing 5-36 Fetching only title
+ 
+books = Book.objects.only('title').all()
+for book in books:
+    print(book.title)

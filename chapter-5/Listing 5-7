@@ -1,0 +1,5 @@
+# Listing 5-7 Book model without null and blank not set properly
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    publish_date = models.DateField()  # Causes error if date is null

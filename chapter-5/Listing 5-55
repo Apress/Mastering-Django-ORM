@@ -1,0 +1,4 @@
+# Listing 5-55 sales intial stage
+
+class Sale(models.Model):
+    quantity = models.IntegerField()

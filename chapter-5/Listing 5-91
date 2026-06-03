@@ -1,0 +1,4 @@
+# Listing 5-91 find the len of published books
+
+books = Book.objects.filter(is_published=True)
+total = len(books) 

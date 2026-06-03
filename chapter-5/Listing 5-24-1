@@ -1,0 +1,6 @@
+# Listing 5-24-1 using values_list
+
+books = Book.objects.values_list('title', flat=True)
+
+for title in books:
+    print(title)

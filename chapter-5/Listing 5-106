@@ -1,0 +1,5 @@
+# Listing 5-106 select_for_update without transaction
+
+order = Order.objects.select_for_update().get(id=1)
+order.status = "completed"
+order.save(

@@ -1,0 +1,7 @@
+#Listing 5-71 closing the connection manually
+
+from django.db import close_old_connections
+
+def long_running_task():
+    close_old_connections()
+    # Task logic here

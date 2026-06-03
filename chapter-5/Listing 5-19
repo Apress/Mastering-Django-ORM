@@ -1,0 +1,5 @@
+# Listing 5-19 Using prefetch_related for Genres
+
+books = Book.objects.prefetch_related('genres').all()
+for book in books: 
+    print(book.title, book.genres.all())

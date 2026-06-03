@@ -1,0 +1,4 @@
+# Listing 5-49-1 looping books using iterator with batch size
+
+for book in Book.objects.iterator(chunk_size=1000):
+    process(book)

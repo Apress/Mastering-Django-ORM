@@ -1,0 +1,3 @@
+# Listing 5-37 defer heavy fields
+
+books = Book.objects.defer('description', 'metadata')
