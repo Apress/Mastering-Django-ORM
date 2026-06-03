@@ -1,0 +1,10 @@
+# Listing 6-3 Whole number to IntegerField
+ 
+# HTML Form Element (Whole Numbers)
+ 
+<input type="number" name="age" />
+  
+# Django Model
+ 
+class Person(models.Model):
+    age = models.IntegerField()

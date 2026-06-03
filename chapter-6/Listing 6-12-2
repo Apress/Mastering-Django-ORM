@@ -1,0 +1,7 @@
+# Listing 6-12-2 Using AbstractBaseUser
+
+from django.contrib.auth.models import AbstractBaseUser
+from django.db import models
+
+class User(AbstractBaseUser):
+    password = models.CharField(max_length=128)

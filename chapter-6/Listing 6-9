@@ -1,0 +1,10 @@
+# Listing 6-9 date input to DateField
+ 
+# HTML Form Element
+
+<input type="date" name="dob" />
+ 
+# Django Model
+
+class Person(models.Model):
+    dob = models.DateField()

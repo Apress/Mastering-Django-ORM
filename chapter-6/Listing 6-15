@@ -1,0 +1,10 @@
+# Listing 6-15 url input to URLFields
+
+# HTML Form Element
+
+<input type="url" name="website"/>
+
+# Django Model
+
+class Profile(models.Model):
+    website = models.URLField(blank=True)

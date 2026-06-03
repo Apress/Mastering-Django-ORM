@@ -1,0 +1,12 @@
+# Listing 6-6 Radio Button to CharField with choices
+ 
+# HTML Form Element
+
+<input type="radio" name="gender" value="M"> Male
+<input type="radio" name="gender" value="F"> Female
+ 
+# Django Model
+
+class Person(models.Model):
+    GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)

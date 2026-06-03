@@ -1,0 +1,10 @@
+# Listing 6-1 text field to CharField example
+ 
+# HTML Form Element
+ 
+<input type="text" name="username"/>
+ 
+# Django Model
+ 
+class User(models.Model):
+    username = models.CharField(max_length=150)

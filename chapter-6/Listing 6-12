@@ -1,0 +1,10 @@
+# Listing 6-12 Password input to CharField
+
+# HTML Form Element
+
+<input type="password" name="password" />
+
+# Django Model
+
+class User(models.Model):
+    password = models.CharField(max_length=128)

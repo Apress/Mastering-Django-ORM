@@ -1,0 +1,4 @@
+# Listing 6-11 ImageField example
+
+class Gallery(models.Model):
+    photo = models.ImageField(upload_to='photos/')

@@ -1,0 +1,11 @@
+# Listing 6-10 file input to FileField
+ 
+# HTML Form Element
+
+<input type="file" name="resume" />
+ 
+# Django Model
+
+class Applicant(models.Model):
+    resume = models.FileField(upload_to='resumes/')
+ 

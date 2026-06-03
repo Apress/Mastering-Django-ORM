@@ -1,0 +1,14 @@
+# Listing 6-7 Dropdowns to CharField with choices
+
+# HTML Form Element
+
+<select name="status">
+  <option value="new">New</option>
+  <option value="closed">Closed</option>
+</select>
+ 
+# Django Model
+
+class Ticket(models.Model):
+    STATUS_CHOICES = [('new', 'New'), ('closed', 'Closed')]
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES)

@@ -1,0 +1,17 @@
+# Listing 6-8 Dropdown to ForeignKey
+
+# HTML Form Element
+
+<select name="category">
+  {% for category in categories %}
+      <option value="{{ category.id }}">{{ category.name }}</option>
+  {% endfor %}
+</select>
+
+# Django Model
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)

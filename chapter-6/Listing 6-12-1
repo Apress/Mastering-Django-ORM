@@ -1,0 +1,6 @@
+# Listing 6-12-1 Using  AbstactUser
+
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    pass

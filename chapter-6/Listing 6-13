@@ -1,0 +1,18 @@
+# Listing 6-13 Mulitselect to ManyToManyField
+
+#HTML Form Element
+
+<select name="products" multiple>
+  {% for product in products %}
+      <option value="{{ product.id }}">{{ product.name }}</option>
+  {% endfor %}
+</select>
+
+# Django Model
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+
+class Order(models.Model):
+    customer = models.CharField(max_length=100)
+    products = models.ManyToManyField(Product)

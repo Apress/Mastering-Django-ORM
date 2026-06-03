@@ -1,0 +1,6 @@
+# Listing 6-12-3 Handling hashing manually
+
+from django.contrib.auth.hashers import make_password, check_password
+
+hashed = make_password("mypassword")
+check_password("mypassword", hashed)

@@ -1,0 +1,10 @@
+# Listing 6-16 color picker to CharField
+
+# HTML Form Element
+
+<input type="color" name="favorite_color" /> 
+
+# Django Model
+
+class ThemePreference(models.Model):
+    favorite_color = models.CharField(max_length=7)

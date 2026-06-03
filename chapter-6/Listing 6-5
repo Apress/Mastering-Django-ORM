@@ -1,0 +1,10 @@
+# Listing 6-5 Checkbox to BooleanField
+ 
+# HTML Form Element
+ 
+<input type="checkbox" name="is_active" />
+ 
+# Django Model
+ 
+class User(models.Model):
+    is_active = models.BooleanField(default=True)

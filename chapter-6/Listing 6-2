@@ -1,0 +1,10 @@
+# Listing 6-2 TextArea to TextField example
+ 
+# HTML Form Element
+ 
+<textarea name="bio"></textarea>
+ 
+# Django Model
+ 
+class Profile(models.Model):
+    bio = models.TextField()
