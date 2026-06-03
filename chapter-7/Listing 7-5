@@ -1,0 +1,12 @@
+# Listing 7-5 savepoint example
+
+from django.db import transaction
+
+with transaction.atomic():
+    sp1 = transaction.savepoint()
+    try:
+        expensive_operation()
+        transaction.savepoint_commit(sp1)
+    except Exception:
+        # Roll back only to sp1, not the whole transaction
+        transaction.savepoint_rollback(sp1)

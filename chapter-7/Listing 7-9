@@ -1,0 +1,3 @@
+# Listing 7-9 update model with slug field
+
+python manage.py makemigrations <app_name> --name <migration file name> --empty

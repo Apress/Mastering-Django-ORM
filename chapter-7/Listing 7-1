@@ -1,0 +1,24 @@
+# Listing 7-1 Defining Custom Manager
+
+from django.db import models
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_published=True)
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    is_published = models.BooleanField(default=False)
+
+    objects = models.Manager()
+    published = PublishedManager()
+
+# Usage:
+
+Book.published.all()
+
+# Equivalent SQL
+
+SELECT "myapp_book"."id", "myapp_book"."title", "myapp_book"."is_published"
+FROM "myapp_book"
+WHERE "myapp_book"."is_published" = TRUE;

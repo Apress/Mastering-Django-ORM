@@ -1,0 +1,26 @@
+# Listing 7-11 populating slug field
+ 
+from django.db import migrations
+from django.utils.text import slugify
+
+def generate_slugs(apps, schema_editor):
+    Book = apps.get_model("myapp", "Book")
+    for book in Book.objects.all():
+        book.slug = slugify(book.title)
+        book.save()
+
+def reverse_slugs(apps, schema_editor):
+   Book = apps.get_model("myapp", "Book")
+   for book in Book.objects.all(): 
+        book.slug = None
+        book.save()
+
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ("myapp", "0002_add_slug_field"),
+    ]
+
+    operations = [
+        migrations.RunPython(generate_slugs, reverse_slugs),
+    ]

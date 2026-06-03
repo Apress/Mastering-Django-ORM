@@ -1,0 +1,22 @@
+# Listing 7-2 Defining Custom QuerySet
+
+class BookQuerySet(models.QuerySet):
+    def expensive(self):
+        return self.filter(price__gt=500)
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    objects = BookQuerySet.as_manager()
+
+# Usage:
+
+Book.objects.expensive().filter(title__contains="Django")
+
+# Generated SQL:
+
+SELECT "myapp_book"."id", "myapp_book"."title", "myapp_book"."price"
+FROM "myapp_book"
+WHERE "myapp_book"."price" > 500
+AND "myapp_book"."title" LIKE '%Django%';

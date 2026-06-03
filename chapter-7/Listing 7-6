@@ -1,0 +1,11 @@
+Listing 7-6 Nested Transactions Using atomic()
+
+with transaction.atomic():
+    step1()
+    try:
+        with transaction.atomic():
+            step2()  # fails
+    except Exception:
+        # Rolled back to savepoint, step1 remains valid
+        pass
+    step3()

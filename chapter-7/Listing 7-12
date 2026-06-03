@@ -1,0 +1,8 @@
+Listing 7-12 explain books query
+
+qs = Book.objects.filter(price__gt=500)
+print(qs.explain(analyze=True, format="TEXT"))
+
+# Output
+
+Seq Scan on public.myapp_book  (cost=0.00..5770.02 rows=232 width=22) (actual time=0.006..14.124 rows=231 loops=1)\n  Output: id, title, author_id, price, number_of_pages \n  Filter: (myapp_book.price > '500'::numberic)\n  Rows Removed by Filter: 130\nPlanning Time: 0.055 ms\nExecution Time: 14.145 ms

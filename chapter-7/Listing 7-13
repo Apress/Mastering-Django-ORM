@@ -1,0 +1,14 @@
+# Listing 7-13 printing queries
+
+from django.db import connection
+
+print(connection.queries)
+
+# Output
+
+[{'sql': 'SELECT "app_book"."id", "app_book"."author_id", "app_book"."title", "app_book"."price" FROM "app_book" LIMIT 21',
+  'time': '0.001'},
+{'sql': 'SELECT "app_author"."id", "app_author"."name" FROM "app_author" LIMIT 21',
+  'time': '0.000'},
+{'sql': 'INSERT INTO "app_author" ("name") VALUES (\'author 123\') RETURNING "app_author"."id"',
+  'time': '0.000'}]

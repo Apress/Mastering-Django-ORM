@@ -1,0 +1,8 @@
+# Listing 7-7 Disabling transaction using non_atomic_requests 
+
+from django.db import transaction
+
+@transaction.non_atomic_requests
+def fast_view(request):
+    # Executes outside of any transaction
+    ...
