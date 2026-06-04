@@ -1,4 +1,4 @@
-#Listing 5-64 using paginator
+# Listing 5-64 using paginator
 
 from django.core.paginator import Paginator
 

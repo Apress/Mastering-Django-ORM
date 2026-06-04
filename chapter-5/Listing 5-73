@@ -1,4 +1,4 @@
-#Listing 5-73 using select_for_update
+# Listing 5-73 using select_for_update
 
 from django.db import transaction
 

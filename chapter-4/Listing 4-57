@@ -1,6 +1,7 @@
 # Listing 4-57 Using F for field comparison
 
 from django.db.models import F
+
 books = Book.objects.filter(
     number_of_pages__gt=F("price")
 )

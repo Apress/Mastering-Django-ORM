@@ -1,6 +1,9 @@
 # Listing 1-11 security 
 
 #Unsafe raw SQL
+
 cursor.execute(f"SELECT * FROM users WHERE username = '{username}'")
+
 #Safe ORM query
+
 User.objects.filter(username=username)

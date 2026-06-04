@@ -7,6 +7,7 @@ class Book(models.Model):
         ordering = ["-published_date"]  
  
 # If we call
+
 books = Book.objects.all()
 
 # Equivalent SQL

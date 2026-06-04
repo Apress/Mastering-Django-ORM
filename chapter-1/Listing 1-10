@@ -1,11 +1,15 @@
 # Listing 1-10 ease of usage
 
 from myapp.models import Book
+
 # Create and save a record
+
 Book.objects.create(
     title="Atomic Habits",
     author="James Clear",
     published_date="2018-10-16"
 )
+
 # Fetch all books
+
 books = Book.objects.all()

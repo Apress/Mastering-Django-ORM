@@ -1,6 +1,6 @@
 # Listing 2-77 models.SET example
 
 def get_anonymous_author():
-    return Author.objects.get(name=”Anonymous”)
+    return Author.objects.get(name="Anonymous")
 
 author = models.ForeignKey(Author, on_delete=models.SET(get_anonymous_author))

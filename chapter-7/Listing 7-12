@@ -1,4 +1,4 @@
-Listing 7-12 explain books query
+# Listing 7-12 explain books query
 
 qs = Book.objects.filter(price__gt=500)
 print(qs.explain(analyze=True, format="TEXT"))

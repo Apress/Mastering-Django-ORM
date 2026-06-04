@@ -4,6 +4,7 @@ books = Book.objects.order_by("title")
 print(list(books))
 
 # Order by price (descending)
+
 books = Book.objects.order_by("-price")
 print(list(books))
 

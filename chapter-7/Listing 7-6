@@ -1,4 +1,4 @@
-Listing 7-6 Nested Transactions Using atomic()
+# Listing 7-6 Nested Transactions Using atomic()
 
 with transaction.atomic():
     step1()

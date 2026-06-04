@@ -1,4 +1,4 @@
-Listing 4-36 Using latest method
+# Listing 4-36 Using latest method
 
 latest_book = Book.objects.latest("published_date")
 print(latest_book.title, latest_book.published_date)

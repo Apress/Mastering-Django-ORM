@@ -1,4 +1,4 @@
-#Listing 5-71 closing the connection manually
+# Listing 5-71 closing the connection manually
 
 from django.db import close_old_connections
 
